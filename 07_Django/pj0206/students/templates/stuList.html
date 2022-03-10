@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {border:1px solid black;
+                        border-collapse: collapse;
+                        text-align: center;}
+        table {width: 550px;}
+        th {width: 200px;}
+    </style>
+</head>
+<body>
+    <h3>전체 학생 리스트</h3>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>학과</th>
+            <th>학년</th>
+            <th>성별</th>
+        </tr>
+        {% if stuList %}
+            {% for stu in stuList %}
+            <tr>
+                <td>{{stu.s_name}}</td>
+                <td>{{stu.s_age}}</td>
+                <td>{{stu.s_major}}</td>
+                <td>{{stu.s_grade}}</td>
+                <td>{{stu.s_gender}}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="5">데이터가 없습니다.</td>
+            </tr>
+        {% endif %}
+    </table>
+    <br>
+    <p><a href="/">메인 페이지로 이동</a></p>
+</body>
+</html>

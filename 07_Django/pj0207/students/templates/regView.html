@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {border: 1px solid black;
+                        border-collapse: collapse;
+                        text-align: center;}
+        table {width: 200px;}
+        th {width: 100px;}
+    </style>
+    <script>
+        function deleteBtn() {
+            alert("삭제된 정보는 복구할 수 없습니다.");
+            if (confirm("정말로 삭제하시겠습니까?")) {
+                location.href="{% url 'students:regDelete' stuView.s_name%}";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>학생 상세 페이지</h3>
+    <table>
+        {% if stuView %}
+            <tr>
+                <td>이름</td>
+                <td>{{stuView.s_name}}</td>
+            </tr>
+            <tr>
+                <td>학과</td>
+                <td>{{stuView.s_major}}</td>
+            </tr>
+            <tr>
+                <td>학년</td>
+                <td>{{stuView.s_grade}}</td>
+            </tr>
+            <tr>
+                <td>나이</td>
+                <td>{{stuView.s_age}}</td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>{{stuView.s_gender}}</td>
+            </tr>
+        {% endif %}
+    </table>
+    <br>
+    <a href="{% url 'students:regAll' %}"><button>이전 페이지</button></a>
+    <a href="/"><button>메인 이동</button></a>
+    <a href="{% url 'students:regModify' stuView.s_name%}"><button>수정</button></a>
+    <button type="button" onclick=deleteBtn()>삭제</button>
+</body>
+</html>

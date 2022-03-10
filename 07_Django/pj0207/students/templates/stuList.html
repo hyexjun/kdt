@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {border:1px solid black;
+                        border-collapse: collapse;
+                        text-align: center;}
+        table {width: 500px;}
+        th {width: 200px;}
+    </style>
+</head>
+<body>
+    <h3>전체 학생 리스트</h3>
+    <p>등록된 학생 : {{s_count}}명</p>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>학과</th>
+            <th>학년</th>
+        </tr>
+        {% if stuList %}
+            {% for stu in stuList %}
+            <tr>
+                <td><a href="{% url 'students:regView' stu.s_name stu.s_major%}">{{stu.s_name}}</a></td>
+                {% comment %} <td><a href="/students/regView?name={{stu.s_name}}">{{stu.s_name}}</a></td> {% endcomment %}
+                <td>{{stu.s_major}}</td>
+                <td>{{stu.s_grade}}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">데이터가 없습니다.</td>
+            </tr>
+        {% endif %}
+    </table>
+    <br>
+    <a href="/students/reg"><button>학생 등록</button></a>
+    <a href="/"><button>메인 이동</button></a>
+</body>
+</html>

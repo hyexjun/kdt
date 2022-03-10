@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>메인 페이지</h2>  {% comment %} 진짜 개신기하다 난 변수명 req만 썼는데 request로 해야만 되다니.. {% endcomment %}
+    {% if request.session.session_id %}
+        <p>{{request.session.session_name}}님 환영합니다.</p>
+        <ul>
+            <li><a href="{% url 'board:blist' %}">게시판 리스트</a></li>
+            <li><a href="/admin">관리자 페이지</a></li>
+            <li><a href="{% url 'member:logout' %}">로그아웃</a></li>
+        </ul>
+    {% else %}
+        <p>회원가입이 필요합니다.</p>
+        <ul>
+            <li>회원가입</li>
+            <li><a href="{% url 'member:login' %}">로그인</a></li>
+        </ul>
+    {% endif %}
+</body>
+</html>

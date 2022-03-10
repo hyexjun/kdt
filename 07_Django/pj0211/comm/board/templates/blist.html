@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시판</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/notice_list.css' %}">
+  <script>
+
+    {% comment %} if ('{{request.session.s_id}}'==null||'{{request.session.s_id}}'=='') {
+      alert("로그인을 하셔야 접속이 가능합니다.")
+      location.href="{% url 'index' %}" <!--home:index가 아닌 이유는 홈의 앱네임이 home이 아니라 ''이기 때문이다..-->
+    }
+
+    function searchBtn(){
+      
+      if($("#searchword").val()==""){
+        alert("단어를 입력해야 검색이 가능합니다.")
+        return false;
+      }
+      else{
+        $("#search").submit()
+      }
+    } {% endcomment %}
+      
+  </script>
+</head>
+<body>
+<section>
+    <a href="{% url 'index' %}"><h1>🐱‍👤 B O A R D 💬</h1></a>
+    <div class="wrapper">
+      <form action="{% url 'board:blist' %}" id="search" method="post">
+        {% csrf_token %}
+        {% if category %}
+          <select name="category" id="category">
+          <option value="all" {% if category == 'all' %}selected{% endif %}>전체</option>
+          <option value="title" {% if category == 'title' %}selected{% endif %}>제목</option>
+          <option value="content" {% if category == 'content' %}selected{% endif %}>내용</option>
+          </select>
+        {% else %}
+        <select name="category" id="category">
+          <option value="all">전체</option>
+          <option value="title">제목</option>
+          <option value="content">내용</option>
+        </select>
+        {% endif %}
+    
+        <div class="title">
+          {% if searchword %}
+            <input type="text" id="searchword" name="searchword" size="16" value="{{searchword}}">
+          {% else %}
+            <input type="text" id="searchword" name="searchword" size="16">
+          {% endif %}
+        </div>
+        <button type="button" onclick="searchBtn()"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+
+    <table>
+      <colgroup>
+        <col width="15%">
+        <col width="40%">
+        <col width="15%">
+        <col width="15%">
+        <col width="15%">
+      </colgroup>
+      <!-- 제목부분 -->
+      <tr>
+        <th>No.</th>
+        <th>제목</th>
+        <th>작성일</th>
+        <th>작성자</th>
+        <th>조회수</th>
+      </tr>
+      <!-- 내용부분 -->
+      <tbody id="tbody">
+        {% if blist %}
+
+          {% for board in blist %}
+            <tr>
+              <td><span class='table-notice'>{{board.b_no}}</span></td>
+              <td class='table-title' id='pInput'>{{board.b_title}}</td>
+              <td>{{board.b_date|date:'Y-m-d H:i'}}</td>
+              <td>{{board.member}}</td>
+              <td>{{board.b_hit}}</td>
+          </tr>
+          {% endfor %}
+        
+        {% else %}
+          <tr>
+            <td colspan="5">데이터가 없습니다.</td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+
+    <ul class="page-num">
+      <!--이전 페이지 정리-->
+      {% if blist.has_previous %}
+        <a href="?nowpage=1"><li class="first"></li></a>
+        <a href="?nowpage={{blist.previous_page_number}}"><li class="prev"></li></a>
+      {% else %}
+        <li class="first"></li>
+        <li class="prev"></li>
+      {% endif %}
+
+      <!--순차적 넘버링-->
+      {% for page in blist.paginator.page_range %}
+        {% if page != nowpage %}
+          <a href="?nowpage={{page}}"><li class="num off"><div>{{page}}</div></li></a>
+        {% else %}
+          <li class="num on"><div>{{page}}</div></li>
+        {% endif %}
+      {% endfor %}
+
+      <!--이후 페이지 정리-->
+      {% if blist.has_next %}
+        <a href="?nowpage={{blist.next_page_number}}"><li class="next"></li></a>
+        <a href="?nowpage={{blist.paginator.num_pages}}"><li class="last"></li></a>
+      {% else %}
+        <li class="next"></li>
+        <li class="last"></li>
+      {% endif %}
+    </ul>
+
+    <a href="{% url 'board:bwrite' %}"><div class="write">쓰기</div></a>
+  </section>
+
+</body>
+</html>

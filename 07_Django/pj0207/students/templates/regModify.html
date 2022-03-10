@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function submit() {
+            alert("정보를 수정하였습니다.")
+        }
+    </script>
+</head>
+<body>
+    <h2>학생 정보 수정</h2>
+    <form action="{% url 'students:regModiCon' %}" method="post">
+        {% csrf_token %}
+        <label>이름 : </label>{{stu.s_name}}
+        <input type="hidden" name="name" value={{stu.s_name}}><br>
+        <label>학과</label>
+        <input type="text" name="major" value={{stu.s_major}}><br>
+        <label>학년</label>
+        <input type="text" name="grade" value={{stu.s_grade}}><br>
+        <label>나이</label>
+        <input type="text" name="age" value={{stu.s_age}}><br>
+        <label>성별</label>
+        <input type="text" name="gender" value={{stu.s_gender}}><br>
+        <br>
+        <input type="submit" value="저장">
+        <a href="/"><input type="button" value="이전으로"></a>
+    </form>
+</body>
+</html>
