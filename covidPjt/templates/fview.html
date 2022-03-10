@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head-block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/fin.css' %}">
+<script type="text/javascript" src="{% static 'js/fin.js' %}"></script>
+{% endblock head-block %}
+
+
+<!--요기 아래 블럭 속에 쓰면 메인 홈페이지에 바로 나옴-->
+{% block fin-block %}
+<div id='fbody'>
+    <div id = 'fhead'>
+        <div id = 'ftitle'>
+            <h1>코로나 진행 추이에 따른 주가 변동 </h1>
+        </div>
+        <div id = 'finfo'>
+            <p>좌측의 y축은 코로나 발생 직전인 2020년 1월 20일의 주가를 100% 기준으로 합니다. <br>
+                우측의 y축은 코로나 발생추이에 따른 인구수입니다.<br>
+                x축은 국내 코로나 환자 첫 발생일인 2020년 1월 20일부터 2022년 1월 19일까지의 시기를 나타냅니다.</p>
+        </div>
+        <div id = 'freset'>
+            <form action="" method="post" name="freset" id="fresetfrom"> 
+                {% csrf_token %}
+                <input type="button" value="RESET" id="fresetbnt">
+            </form>
+        </div>
+    </div>
+    <div id = 'fmain'>
+            <div  id = 'fstock'>
+                <form action="" method="post" name="fstock1" id="fstockfrom1" class='finputbox'> 
+                    {% csrf_token %}
+                    <div id = 'fuserinput1'  class= 'finputlabel'>
+                        <label>*코로나 진행 동안의 주가 데이터</label><br>
+                    </div>
+                    
+                    <label>종목 코드(ticker)</label><br>
+                    <input type="text" id="fstock1">
+                    <input type="button" id = 'fstock1btn' value="GO" style="width: 40pt">
+        
+                </form>
+                <br>
+                <form action="" method="post" name="fstock2" id="fstockfrom2" class='finputbox'> 
+                    {% csrf_token %}
+                    <div id = 'fuserinput2' class= 'finputlabel'>
+                        <label>*특정 일자의 주가 및 코로나 데이터</label><br>
+                    </div>
+                    <label>종목 코드(ticker)</label><br>
+                    <input type="text" id="fstock2"><br>
+                    <label>20200120~20220119 사이의 날짜</label><br>
+                    <input type="text" id="fstock3">
+                    <input type="button"  value="GO" id='fstock2btn' style="width: 40pt">
+                </form>
+            </div>
+            <div  id = 'fchart'>
+                <canvas id="myChart"></canvas>
+        
+            </div>
+
+            <div  id = 'fcovid'>
+                <form action="" method="post" name="fcovid" id="fcovidfrom" class='finputbox'>
+                    {% csrf_token %} 
+                    <div id = 'fuserinput3' class= 'finputlabel'>
+                        <label>*코로나 데이터</label><br>
+                    </div>
+                    
+                    <label><input type="radio" name="covid" value="Daily-Covid"  checked> 일별 신규 확진자 </label><br>
+                    <label><input type="radio" name="covid" value="Total-Covid"> 누적 확진자</label><br>
+                    <label><input type="radio" name="covid" value="Daily-Vaccine"> 일별 백신 접종자</label><br>
+                    <label><input type="radio" name="covid" value="Total-Vaccine"> 누적 백신 접종자</label><br>
+                    <input type="button" value="Submit" id="radioBtn" style="width: 40pt">
+                </form>
+                <br>
+                <form action="" method="post" name="fcovid" id="fcovidfrom" class='finputbox'>
+                    {% csrf_token %} 
+                    <div id = 'fuserinput4' class= 'finputlabel'>
+                        <label>*확진자 추세</label><br>
+                    </div>
+                    <label>20200120~20220119 사이의 날짜</label><br>
+                    <input type="text" id="fcovid1"><br>
+                    <input type="button" value="Submit" id="radioBtn2" style="width: 40pt">
+                </form>
+            </div>
+    </div>
+    <br><br><br>
+    <div id = 'ftext'>
+        <ul id = 'flist'>
+            <li></li>
+        </ul>
+    </div>
+    <div id = 'fimage'>
+        <div  id = 'fimagerow'>
+        </div>
+    </div>
+</div>
+{% endblock fin-block %}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head-block %} 
+{% endblock head-block %}
+
+<!--요기 아래 블럭 속에 쓰면 메인 홈페이지에 바로 나옴-->
+{% block hj-block %}
+<section>
+    <p id="boardTitle">N O T I C E</p>
+    <div class="tSpace">
+      <table>
+          <colgroup>
+              <col width="15%">
+              <col width="45%">
+              <col width="25%">
+              <col width="15%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>등록일</th>
+              <th>조회수</th>
+            </tr>
+          </thead>
+          <!--게시글 등록부분-->
+          <tbody class="tableBody">
+            {% if blist %}
+              {% for board in blist %}
+                <tr>
+                  <td>{{board.b_no}}</td>
+                  <td><a href="{% url 'board:bview' board.b_no %}">{{board.b_title}}</a></td>
+                  <td>{{board.b_date|date:'Y-m-d H:i'}}</td>
+                  <td>{{board.b_hit}}</td>
+                </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan='4'>등록된 게시물이 없습니다.</td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+
+    {% comment %} <div class="searchBox">
+      <form action="#" method="post">
+        <select name="category" id="category">
+          <option value="0">전체</option>
+          <option value="title">제목</option>
+          <option value="content">내용</option>
+        </select>
+
+        <div>
+          <input type="text" size="16">
+        </div>
+  
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div> {% endcomment %}
+
+
+    <!--페이지 넘버링-->
+    <ul class="page-num">
+      {% if blist.has_previous %}
+        <a href="?nowpage=1"><li class="first"></li></a>
+        <a href="?nowpage={{blist.previous_page_number}}"><li class="prev"></li></a>
+      {% else %}
+        <li class="first"></li>
+        <li class="prev"></li>
+      {% endif %}
+
+      {% for page in blist.paginator.page_range %}
+        {% if page != nowpage %}
+          <a href="?nowpage={{page}}"><li class="num off"><div>{{page}}</div></li></a>
+        {% else %}
+          <li class="num on"><div>{{page}}</div></li>
+        {% endif %}
+      {% endfor %}
+
+      {% if blist.has_next %}
+        <a href="?nowpage={{blist.next_page_number}}"><li class="next"></li></a>
+        <a href="?nowpage={{blist.paginator.num_pages}}"><li class="last"></li></a>
+      {% else %}
+        <li class="next"></li>
+        <li class="last"></li>
+      {% endif %}
+    </ul>
+  </section>
+{% endblock hj-block %}
