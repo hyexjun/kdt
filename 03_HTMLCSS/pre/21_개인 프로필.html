@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>개인 프로필 입력</TITLE>
+	</HEAD>
+	<BODY>
+		<form action="" method="get">
+		<p>개인 프로필 입력</p>
+		<table border="1">
+		<tr><th colspan="2">여러분의 개인 정보를 입력하세요.</th></tr>
+		<tr><td align="center">이름</td><td><input type="text" name="username" size="15"/></td></tr>
+		<tr><td align="center">주민등록번호</td><td><input type="text" name="id number 1" maxlength="6" size="6"/>-<input type="text" name="id number 2" maxlength="7" size="7"/></td></tr>
+		<tr><td align="center">성별</td><td>
+			<input type="radio" id="female" checked name="gender" value="F"/>
+			<label for="female">여자</label>
+
+			<input type="radio" id="male" checked name="gender" value="M"/>
+			<label for="male">남자</label></td></tr>
+			<tr><td align="center">사진</td><td><input type="text" name="photo" size="15"/><input type="button" value="찾아보기..."/></td></tr>
+		<tr><td align="center">주소</td><td><input type="text" name="address" size="30"/></td></tr>
+
+		<tr><td align="center">전화번호</td>
+		<td><select name="phone"><option selected>지역번호</option>
+		<option value="02">02</option><option value="031">031</option><option value="062">062</option></select>
+		<input maxlength="4" type="text" name="phone number 1" size="5"/>-<input maxlength="4" type="text" name="phone number 2" size="5"/></td></tr>
+
+		<tr><td align="center">휴대전화</td>
+		<td><select name="mobile"><option selected>통신사</option>
+		<option value="010">010</option><option value="011">011</option><option value="017">017</option></select>
+		<input maxlength="4" type="text" name="mobile number 1" size="5"/>-<input maxlength="4" type="text" name="mobile number 2" size="5"/></td></tr>
+
+		<tr><td align="center">이메일</td><td><input type="text" name="email" size="10"/>@
+		<select name="domain"><option selected>도메인</option>
+		<option value="naver.com">네이버</option><option value="daum.net">다음</option></select></td></tr>
+
+		<tr><td align="center">학습과목</td>
+		<td><input type="checkbox" id="html" name="class" value="html"/>
+			<label for="html">HTML</label>
+			<input type="checkbox" id="css" name="class" value="css"/>
+			<label for="css">CSS</label>
+			<input type="checkbox" id="java" name="class" value="java"/>
+			<label for="java">JAVA</label>
+			<input type="checkbox" id="ibatis" name="class" value="ibatis"/>
+			<label for="ibatis">iBatis</label>
+			<input type="checkbox" id="struts2" name="class" value="struts2"/>
+			<label for="struts2">Struts2</label></td></tr>
+		
+		<tr><td rowspan="2" align="center">자기소개</td><td><textarea cols="45" rows="5" value="장점을 작성하세요."></textarea></td></tr>
+		<tr><td><textarea cols="45" rows="5" value="단점을 작성하세요."></textarea></td></tr><!--텍스트박스에 value값 어떻게 해야 나오는지 모르겠어유-->
+		<tr><td colspan="2" align="center"><input type="submit" value="제출"/><input type="button" value="취소"/></td></tr>
+		</tabel></form>
+	</BODY>
+</HTML>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0120_03</title>
+    <style>
+        table, th, td { border: 1px solid black;
+                        border-collapse: collapse;
+                        text-align: center;
+                        width: 200px; }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label>숫자를 입력하세요.</label>
+        <br>
+        <input type="text" name="inputNum" id="inputNum">
+        <br>
+        <button type="button" onclick="gogo()">PRINT</button>
+        <br><br>
+    </form>
+    <table>
+        <tr>
+            <td>최대값</td>
+            <td id="maxNum"></td>
+        </tr>
+        <tr>
+            <td>최소값</td>
+            <td id="minNum"></td>
+        </tr>
+        <tr>
+            <td>오름차순</td>
+            <td id="sortNum"></td>
+        </tr>
+        <tr>
+            <td>내림차순</td>
+            <td id="revNum"></td>
+        </tr>
+    </table>
+    <script>
+        
+        function gogo() {
+            let inputNum = document.getElementById("inputNum").value;
+            let splitNum = inputNum.split(',');
+            let realNum = splitNum.map(Number);
+
+            document.getElementById("maxNum").innerText=Math.max.apply(null, realNum);
+            document.getElementById("minNum").innerText=Math.min.apply(null, realNum);
+            document.getElementById("sortNum").innerText=realNum.sort();
+            document.getElementById("revNum").innerText=realNum.reverse();
+
+            // // innerHTML로 해보기
+            // let dataHtml = '';
+            // for (let i = 0 ; i < 10 ; i++) {
+            //     dataHtml += '<tr><td>최대값</td><td>'+Math.max.apply(null, realNum)+'</td></tr>';
+            //     dataHtml += '<tr><td>최소값</td><td>'+Math.max.apply(null, realNum)+'</td></tr>';
+            //     dataHtml += '<tr><td>오름차순</td><td>'+realNum.sort()+'</td></tr>';
+            //     dataHtml += '<tr><td>내림차순</td><td>'+realNum.reverse()+'</td></tr>';
+            // }
+            // document.getElementById('dataIn').innerHTML= dataHtml;
+        }
+
+    </script>
+</body>
+</html>

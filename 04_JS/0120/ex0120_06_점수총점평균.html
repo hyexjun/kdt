@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0120_06</title>
+    <style>
+        table, th, td { border: 1px solid black;
+                        border-collapse: collapse;
+                        width: 400px; height: 30px;
+                        text-align: center;}
+    </style>
+</head>
+<body> <!--이름 국영수 입력을 받아 합계와 평균 출력-->
+    <form action="">
+        <label>학생 이름</label>
+        <input type="text" name="sName" id="sName">
+        <br>
+        <label>국어 점수</label>
+        <input type="text" name="jKor" id="jKor">
+        <br>
+        <label>영어 점수</label>
+        <input type="text" name="jEng" id="jEng">
+        <br>
+        <label>수학 점수</label>
+        <input type="text" name="jMath" id="jMath">
+        <br>
+        <br>
+        <button type="button" onclick="gogo()">가보자고</button>
+        <br><br>
+    </form>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>합계</th>
+            <th>평균</th>
+        </tr>
+        <tr>
+            <td id="tName"></td>
+            <td id="tKor"></td>
+            <td id="tEng"></td>
+            <td id="tMath"></td>
+            <td id="tTotal"></td>
+            <td id="tAvg"></td>
+        </tr>
+    </table>
+    <script>
+        function gogo() {
+            let sName = document.getElementById("sName").value;
+            let jKor = Number(document.getElementById("jKor").value);
+            let jEng = Number(document.getElementById("jEng").value);
+            let jMath = Number(document.getElementById("jMath").value);
+            let jTotal = jKor+jEng+jMath;
+            let jAvg = (jKor+jEng+jMath)/3;
+
+            document.getElementById("tName").innerText=sName; // let 변수명과 input id는 개념이 달라서
+            document.getElementById("tKor").innerText=jKor;   // 이 둘의 철자가 다른 건 상관이 없는데
+            document.getElementById("tEng").innerText=jEng;   // 인풋 id랑 td id랑 같았어서 이전에 안 됐음
+            document.getElementById("tMath").innerText=jMath;
+            document.getElementById("tTotal").innerText=jTotal;
+            document.getElementById("tAvg").innerText=jAvg;
+        }
+    </script>
+</body>
+</html>

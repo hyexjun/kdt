@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0126_06</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+        table,th,td {border: 1px solid black;
+                     border-collapse: collapse;
+                     text-align: center;}
+        th, td {height: 40px; width: 100px;}
+
+    </style>
+    <script>
+
+        
+        $(function () {
+
+
+            $.ajax({
+            url:"schedule.json",
+            type:"get",
+            // data:"",
+            dataType:"json",
+
+            success: function(data){
+                alert("성공 "+data.data[0].station_code);
+
+
+                    if (data.data.lenght==0) {
+                        alert("데이터가 없습니다.")
+                    } else {
+
+                        let plusdata="";
+                        for (let i in data.data) {
+
+                        plusdata += "<tr>";
+                        plusdata += "<td>"+data.data[i].station_code+"</td>";
+                        plusdata += "<td>"+data.data[i].station_line+"</td>";
+                        plusdata += "<td>"+data.data[i].station_name+"</td>";
+                        plusdata += "<td>"+data.data[i].week+"</td>";
+                        plusdata += "<td>"+data.data[i].train_arrtime+"</td>";
+                        plusdata += "<td>"+data.data[i].train_deptime+"</td>";
+                        plusdata += "<td>"+data.data[i].train_departure+"</td>";
+                        plusdata += "<td>"+data.data[i].train_destination+"</td>";
+                        plusdata += "</tr>";
+
+                        }
+
+                        $("#contents").html(plusdata);
+
+                    }
+                
+                
+
+
+
+                },
+
+                error: function(){
+                    alert("다시 하도록..")
+                }
+
+            })
+
+            
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+
+    <h2>열차시간표-서울역</h2>
+    <table>
+        <tr>
+            <th>코드</th>
+            <th>호선</th>
+            <th>역명</th>
+            <th>요일별</th>
+            <th>도착시간</th>
+            <th>출발시간</th>
+            <th>출발역</th>
+            <th>종착역</th>
+        </tr>
+        <tbody id="contents">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    
+
+</body>
+</html>

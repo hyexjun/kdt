@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        div { width: 1000px; height: 80px;
+              margin: 0 auto; }
+        ul>li { width: 155px; height: 80px;
+                font-size: 18px;
+                text-align: center;
+                border: 1px solid black;
+                padding-top: 25px;
+                list-style-type: none;
+                float: left; }
+        [class ~="button"] { background: lightyellow; }
+        ul li:nth-child(1) { width: 200px;
+                             /* border: 1px solid black; */ }
+        ul li:nth-child(2n+1) { background: honeydew; }
+        ul li:first-child { border-top-left-radius: 15px;
+                            border-bottom-left-radius: 15px; }
+        ul li:last-child { border-top-right-radius: 15px;
+                           border-bottom-right-radius: 15px; }
+                           
+        
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="u01">
+            <li>PRODUCT</li>
+            <li>TECHNOLOGY</li>
+            <li>ESG</li>
+            <li> COMPANY</li>
+        </ul>
+    </div>
+</body>
+</html>

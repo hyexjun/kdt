@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0124_02</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+
+    </style>
+    <script>
+
+        $(function(){
+
+            let user_id="admin";         // db에서 왔다고 가정..
+            $("#id").val();
+
+            let data_hobby="game,book"   // db에서 가져옴..
+            $("input:checkbox[name=hobby]").each(function(){
+                // 속성값이 game, book이라는 것을 가지고 있느냐
+                if (data_hobby.indexOf(this.value) != -1){   // 이게 -1이라면? 의 의미를 다시 보자..
+                    this.checked=true;
+                };
+            });
+
+
+
+
+            // 약관 모두 동의 만들어보기 .. 뭐 걍 위에꺼 따라서 하면 하긴 하는데...
+            let all_accept="a01,a02"
+            $("input:checkbox[name=accept]").each(function(){
+
+                if (all_accept.indexOf(this.value) != -1){
+                    this.checked=true;
+                };
+            });
+
+
+
+            $("#btn").click(function(){
+                // alert("테스트")
+                alert($("input:checkbox").length);  // 달러 박는 기준.. 헷갈린다..
+
+                $("input:checkbox[name=accept]").each(function(){
+                    alert("선택된 약관 : "+$("input:checkbox[name=accept]:checked").length);
+                    if (this.checked==true) {        // accept 체크박스 누락 여부 확인
+                        alert("체크되어 있습니다.");
+                    } else {
+                        alert("체크되지 않은 항목이 있습니다. 다시 확인해주세요.");
+                        this.checked=true;   // 체크되지 않은 항목을 강제 체크처리..
+                    }
+
+                });
+
+                $("input:checkbox[name=hobby]").each(function(){
+                    alert("선택된 취미 : "+$("input:checkbox[name=hobby]:checked").length);
+                });
+
+            });
+            
+
+
+
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+    <h3>회원가입</h3>
+    <form action="#" method="get">
+        <label>아이디</label>
+        <input type="text" name="id" id="id"><br>
+
+        <br>
+        <label>약관 동의</label><br>
+        <input type="checkbox" name="accept" id="a01" value="a01">
+        <label for="a01">약관 1 내용에 동의합니다.</label><br>
+        <input type="checkbox" name="accept" id="a02" value="a02">
+        <label for="a02">약관 2 내용에 동의합니다.</label>
+
+        <br><br>
+        <label>취미</label>
+        <input type="checkbox" name="hobby" id="game" value="game">
+        <label for="game">게임</label>
+        <input type="checkbox" name="hobby" id="golf" value="golf">
+        <label for="golf">골프</label>
+        <input type="checkbox" name="hobby" id="book" value="book">
+        <label for="book">독서</label>
+        <input type="checkbox" name="hobby" id="run" value="run">
+        <label for="run">조깅</label>
+        <input type="checkbox" name="hobby" id="swim" value="swim">
+        <label for="swim">수영</label><br>
+        <br>
+        <button type="submit" id="btn">회원가입</button>
+
+    </form>
+    
+
+    
+
+</body>
+</html>

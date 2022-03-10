@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>외부 자바 스크립트 연동</title>
+    <script scr="../js/script.js"></script> <!--'../'는 폴더를 나옴 './'는 현재 폴더가 기준 '/' root-->
+</head>
+<body>
+    <script>
+        var a = 1 ;
+        var str = "문자열입니다." ;
+        var b = true ;
+        var c = false ;
+        var d = 10 > 5 ; // true
+
+        document.write(d,"입니다. <br>", b, "입니다. <br>");
+        document.write(a,"번째 화면에 글을 적습니다.");
+    </script>
+</body>
+</html>

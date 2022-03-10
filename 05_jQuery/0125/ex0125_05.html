@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0125_05</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+
+    </style>
+    <script>
+
+        $(function(){
+
+            $(".box1").click(function(){
+                alert("호출");
+                $(this).remove();  // 오..
+            });
+
+            $(".box2").click(function(){
+                alert("호출");
+                $(this).next().empty();
+            });
+
+
+
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+    <div class="box1">
+        <p>내용 1</p>
+        <p>내용 2</p>
+    </div>
+    <div class="box2">
+        <p>내용 3</p>
+        <p>내용 4</p>
+    </div>
+    <div class="box3">
+        <p>내용 5</p>
+        <p>내용 6</p>
+    </div>
+
+    
+
+</body>
+</html>

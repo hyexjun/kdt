@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0124_04</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .selected {text-decoration: line-through; font-weight: 700; color: red;}
+    </style>
+    <script>
+
+        $(function(){
+
+            $("input:checkbox").click(function(){
+                if ($(this).prop('checked')) {
+                    $(this).next().addClass("selected");
+                } else {
+                    $(this).next().removeClass("selected");
+                };
+
+            });
+
+
+
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+    <h2>prop, attr, addClass, removeClass</h2>
+    <form>
+        <input type="checkbox" name="color_check" id="ch01" value="ch01">
+        <label for="ch01" class="">체크박스 클릭 시, 글자 변경 1</label>
+        <br>
+        <input type="checkbox" name="color_check" id="ch02" value="ch02">
+        <label for="ch02" class="">체크박스 클릭 시, 글자 변경 2</label>
+        <br>
+        <input type="checkbox" name="color_check" id="ch03" value="ch03">
+        <label for="ch03" class="">체크박스 클릭 시, 글자 변경 3</label>
+    </form>
+
+    
+
+</body>
+</html>

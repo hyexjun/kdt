@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0121_03</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            // let i=0;
+            // $("button").click(function(){   // 버튼을.클릭하면. 기능한다
+            //     $("#txt1").text(i+"번째 클릭");         // 기능하는 것 : txt1 아이디위치에 i를 텍스트로 나오게!
+            //     i++;                        // i는 클릭마다 1증가
+            // });
+
+
+
+            // 홀수일 때는 01 red, 02 black 짝수일 때는 01 blue, 02 black 나오도록 해보자.
+            // 1번째 클릭하면 c01 블랙>레드로. 2번째 c02 블랙>블루로. 버튼은 한개만 사용.
+
+
+            let i=0;
+            $("button").click(function(){
+                i++;
+                $("#txt1").text(i+"번째 클릭");
+
+                if (i%2==1) {
+                    $("#btn").on("click",function(){
+                        $(".c01").css("color","blue");
+                        $(".c02").css("color","black")
+                        });
+                } else if (i%2==0) {
+                    $("#btn").on("click",function(){
+                        $(".c02").css("color","red");
+                        $(".c01").css("color","black");
+                        })
+                    };
+            
+                
+            });
+
+
+
+            
+
+            
+
+
+            
+        });
+    </script>
+
+</head>
+<body>
+
+    <ul>
+        <li class="c01">네이버</li>
+        <li class="c02">다음</li>
+        <li class="c01">네이트</li>
+        <li class="c02">구글</li>
+        <li class="c01">지마켓</li>
+        <li class="c02">배달의 민족</li>
+    </ul>
+    <button id="btn">버튼</button>
+    <p id="txt1"></p>
+
+</body>
+</html>

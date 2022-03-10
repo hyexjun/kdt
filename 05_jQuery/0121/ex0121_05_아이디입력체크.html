@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0121_05</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #id {color: blue; font-weight: 600; margin-left: 10px;}
+        #s01 {color: red; font-weight: 600; margin-left: 10px;}
+    </style>
+    <script>
+        $(function(){
+
+
+            $("#btn").click(function(){
+                if (($("#id").val().length)<8) {
+                    $("#s01").text("8자리 이상 입력이 필요합니다.");
+                    $("#id").val(""); // 틀리면 인풋 초기화
+                    $("#id").focus();
+                } else {
+                    $(alert("아이디가 정상적으로 입력되었습니다."));
+                    $("#s01").text("");
+                } ;
+
+
+                
+            });
+
+
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+    <form>
+        <label>아이디</label>
+        <input type="text" name="id" id="id" placeholder="8자리 이상">
+        <span id="s01"></span>
+        <input type="button" id="btn" value="아이디 체크">
+    </form>
+
+</body>
+</html>

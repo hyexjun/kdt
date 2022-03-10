@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시판</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/notice_list.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+  $(function (){
+    alert("하잇");
+
+    let html_data="";
+    html_data += "<tr>";
+    html_data += "<td><span class='table-notice'></span></td>";
+    html_data += "<td class='table-title' id=pInput>";
+    // html_data += "<a href='../html02/login.html'>컨텐츠 뷰 페이지로 연결</a></td>";
+    html_data += "컨텐츠 뷰 페이지로 연결(게시글 제목)</td>";
+    html_data += "<td>2021-01-27</td>";
+    html_data += "<td>홍길동</td>";
+    html_data += "<td>1</td>";
+    html_data += "</tr>";
+
+    $("#tbody").html(html_data);
+
+
+    $(".table-title").click(function (){
+      alert(document.getElementById("pInput").innerText);
+      window.open("../html02/login.html","childForm","width=800","height=600",resizable=no,scrollbars=no)
+
+    });
+
+
+
+
+
+
+
+
+    $.ajax({     // ajax를 왜 사용할까요? 서버랑 연동하려고!!
+      url:"",    // 서버의 url 링크로 가. 그 특정 링크를 호출.?
+    });
+
+
+
+  });
+  </script>
+</head>
+<body>
+<section>
+    <h1>NOTICE</h1>
+    <div class="wrapper">
+      <form action="/search" name="search" method="post">
+        <select name="category" id="category">
+          <option value="0">전체</option>
+          <option value="title">제목</option>
+          <option value="content">내용</option>
+        </select>
+
+        <div class="title">
+          <input type="text" size="16">
+        </div>
+  
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+
+    <table>
+      <colgroup>
+        <col width="15%">
+        <col width="40%">
+        <col width="15%">
+        <col width="15%">
+        <col width="15%">
+      </colgroup>
+      <!-- 제목부분 -->
+      <tr>
+        <th>No.</th>
+        <th>제목</th>
+        <th>작성일</th>
+        <th>작성자</th>
+        <th>조회수</th>
+      </tr>
+      <!-- 내용부분 -->
+      <tbody id="tbody">
+        <tr>
+          <td><span class="table-notice"></span></td>
+          <td class="table-title">
+          <a href=""></a>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+      
+      
+    </table>
+
+    <ul class="page-num">
+      <li class="first"></li>
+      <li class="prev"></li>
+      <li class="num"><div>1</div></li>
+      <li class="next"></li>
+      <li class="last"></li>
+    </ul>
+
+    <a href="write_view.jsp"><div class="write">쓰기</div></a>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * { margin: 0; padding: 0; }
+        #tpop { width: 100%; height: 40px; background: #aa033e;
+                position: absolute; z-index: 2; }
+        #tpop>div { width: 1400px; height: 40px; margin: 0 auto; }
+        #tpop_txt1 { width: 1500px; height: 40px;
+                     float: left; padding-left: 10px;
+                     line-height: 35px;
+                     color:#fff; }
+        #tpop_x { width: 40px; height: 40px; float: left;
+                  text-align: center; line-height: 35px;
+                  border: 1px solid white;
+                  color: #fff; font-size: 22px;
+                  box-sizing: border-box; }
+        header { width: 100%; height: 80px;
+                 position: absolute;
+                 border-bottom: 1px solid rgb(14, 6, 6);
+                 background: rgba(0,0,0,0.2);
+                 top:40; z-index: 3; }
+        #banner { width: 100%; height: 600px;
+                  overflow: hidden;
+                  position: absolute; z-index: 1; }
+        video { position: absolute; top: -20px; width: 100%; z-index: 1; }
+        h2 { color:#fff; font-size: 70px; position: relative;
+             left: 300px; top: 265px; z-index: 4; }
+    </style>
+</head>
+<body>
+    <div id="tpop">
+        <div>
+            <div id="tpop_txt1">Display Your Universe! CES 2022로 여러분을 초대합니다.</div>
+            <div id="tpop_x">ｘ</div>
+        </div>
+    </div>
+    <header>
+        <nav></nav>   
+    </header>
+    <div id="banner">    
+        <video src="video/lg01.mp4" autoplay muted loop></video>
+    </div>
+    <h2>OLED, Natural Reality</h2>
+</body>
+</html>

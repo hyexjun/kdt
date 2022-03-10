@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/prefixfree.min.js"></script>
+    <style>
+        img { width: 300px; }
+
+        .d01 { width: 300px; height: 300px;
+               animation: imgrotate 1s infinite alternate; }
+
+        .d02 { width: 300px; height: 300px;
+               animation: imgscale 1s infinite alternate ease-in; }
+
+        @keyframes imgrotate {
+            from { transform: perspective(100px) rotateX(0deg); }
+            50% { transform: perspective(100px) rotateX(0deg); }
+            to { transform: perspective(100px) rotateX(180deg); }
+        }
+
+        @keyframes imgscale {
+            from { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            to { transform: scaleX(1.2); }
+        }
+        /* 이미지 1개 rotate x축 180도, z축 180도 회전
+        자동차 이미지로 500px 이동 후 제자리로 */
+
+    </style>
+</head>
+<body>
+    <div class="d01">
+        <img src="../images/car2-1.png" alt="자동차">
+    </div>
+    <div class="d02">
+        <img src="../images/car2-1.png" alt="자동차">
+    </div>
+</body>
+</html>

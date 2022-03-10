@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0126_03</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+    <style>
+
+        input {margin: 5px auto; height: 18px;}
+        #zip {width: 100px;}
+        #jibunAddress,#addressEnglish {width: 300px;}
+        #address {width: 285px;}
+
+    </style>
+    <script>
+
+        $(function () {
+
+
+        });
+
+
+        function openZipSearch(){
+            // alert("호출")
+
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    $("#zip").val(data.zonecode);
+                    $("#address").val(data.address);
+                    $("#jibunAddress").val(data.jibunAddress);
+                    $("#addressEnglish").val(data.addressEnglish);
+                }
+            }).open();
+
+
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+    <h2>다음주소 api</h2>
+    <label>우편번호 : </label><input type="text" name="zip" id="zip">
+    <button onclick="openZipSearch()">우편번호 검색</button>
+    <br>
+    <label>도로명주소 : </label>
+    <input type="text" name="address" id="address" readonly><br>
+    <label>지번주소 : </label>
+    <input type="text" name="jibunAddress" id="jibunAddress"><br>
+    <label>상세주소 : </label>
+    <input type="text" name="detailAddress" id="detailAddress"><br>
+    <label>영문주소 : </label>
+    <input type="text" name="addressEnglish" id="addressEnglish"><br>
+
+
+</body>
+</html>

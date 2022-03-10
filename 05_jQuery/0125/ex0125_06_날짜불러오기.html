@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0125_06</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+
+    </style>
+    <script>
+
+        let today=new Date();
+        let nowYear=today.getFullYear();
+        let nowMonth=today.getMonth();
+        let nowDate=today.getDate();
+        let nowDay=today.getDay();
+
+
+        // 배열과 인덱스 활용하기
+        let arrDay=["일","월","화","수","목","금","토"]
+        arrDay[nowDay];
+
+
+        // 스위치 활용하기.. 길고 번거로워서 비추..
+        let K_nowDay
+        switch (nowDay) {
+            case 0 :
+                K_nowDay = "일"
+                break;
+            case 1 :
+                K_nowDay = "월"
+                break;
+            case 2 :
+                K_nowDay = "화"
+                break;
+            case 3 :
+                K_nowDay = "수"
+                break;
+            case 4 :
+                K_nowDay = "목"
+                break;
+            case 5 :
+                K_nowDay = "금"
+                break;
+            case 6 :
+                K_nowDay = "토"
+                break;
+        }
+
+        console.log(nowYear+"년 "+(nowMonth+1)+"월 "+nowDate+"일 "+K_nowDay+"요일")
+        console.log(nowYear+"년 "+(nowMonth+1)+"월 "+nowDate+"일 "+arrDay[nowDay]+"요일")
+
+
+        $(function () {
+
+            
+
+
+
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+    
+
+    
+
+</body>
+</html>

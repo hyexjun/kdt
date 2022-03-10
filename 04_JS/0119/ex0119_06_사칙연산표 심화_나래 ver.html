@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td {border: 1px solid black;}
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <form>
+        <label> 숫자1-1</label>
+        <input type="text" name="num11" id="num11">
+        <label> 숫자1-2</label>
+        <input type="text" name="num12" id="num12"> <br>
+        <label> 숫자2-1</label>
+        <input type="text" name="num21" id="num21">
+        <label> 숫자2-2</label>
+        <input type="text" name="num22" id="num22"><br>
+        <label> 숫자3-1</label>
+        <input type="text" name="num31" id="num31">
+        <label> 숫자3-1</label>
+        <input type="text" name="num32" id="num32"><br>
+        <button type="button" onclick="f_cal()">계산</button>
+    </form>
+    <table>
+        <tr>
+            <td></td>
+            <td>합</td>
+            <td>차</td>
+            <td>곱</td>
+            <td>분</td>
+        </tr>
+        <tr>
+            <td>1번</td>
+            <td id="t11"></td>
+            <td id="t12"></td>
+            <td id="t13"></td>
+            <td id="t14"></td>
+        </tr>
+        <tr>
+            <td>2번</td>
+            <td id="t21"></td>
+            <td id="t22"></td>
+            <td id="t23"></td>
+            <td id="t24"></td>
+        </tr>
+        <tr>
+            <td>3번</td>
+            <td id="t31"></td>
+            <td id="t32"></td>
+            <td id="t33"></td>
+            <td id="t34"></td>
+        </tr>        
+    </table>
+
+    <script>
+
+function f_cal(){
+            for(var i=1; i<=3; i++){
+
+                var result1=[];
+                var num1 = parseInt(document.getElementById("num"+i+'1').value);
+                var num2 = parseInt(document.getElementById("num"+i+'2').value);
+
+                result1= cal(num1, num2);
+                
+                document.getElementById("t"+i+"1").innerText=(result1[0])
+                document.getElementById("t"+i+"2").innerText=(result1[1])
+                document.getElementById("t"+i+"3").innerText=(result1[2])
+                document.getElementById("t"+i+"4").innerText=(result1[3])      
+            }
+        
+            function cal(num1, num2){
+               
+                var result=[,,,]
+                result[0]=num1+num2
+                result[1]=num1-num2
+                result[2]=num1*num2
+                result[3]=num1/num2
+            
+                return result;
+            }
+        }
+        
+    </script>
+</body>
+</html>

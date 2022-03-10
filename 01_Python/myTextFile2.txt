@@ -1,0 +1,5 @@
+exit이랑 break 차이?
+범위 있는 경우 if
+없는 경우 while이지만 count += 1 같은 걸로 범위 제한할 순 있음
+
+continue 약간 쓰루같은 느낌..?

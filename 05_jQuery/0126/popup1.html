@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0126_01_popup</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+        input {margin: 5px auto; height: 18px;}
+
+    </style>
+    <script>
+
+        $(function(){
+            alert(opener.document.getElementById("pInput").value)
+            $("#cInput").val(opener.document.getElementById("pInput").value);  // 부모에 있는 형태에서 p인풋의 요소를 val에 넣어라
+        });
+
+
+        function sendParent(){
+            alert($(sInput).val());
+            opener.document.getElementById("sInput").value = $("#cInput").val();
+            window.close();
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+    <h2>자식창 ( 팝업 )</h2>
+
+    <label>아이디 중복 확인 : </label>
+    <input type="text" id="cInput" name="cInput">
+    <button onclick="sendParent()">부모창으로 값 전달</button><br>
+
+    <!-- <label>부모창으로 보낼 값 :</label>
+    <input type="text" id="sInput" name="sInput">
+    <button onclick="sendParent()">부모창으로 값 전달</button> -->
+    
+
+</body>
+</html>

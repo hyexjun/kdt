@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td { border: 1px solid black;
+                        border-collapse: collapse;
+                        width: 250px;
+                        text-align: center; }
+    </style>
+</head>
+<body>
+    <form action="#" method="get" name="frm">
+        <label>숫자를 맞혀보세요.</label>
+        <input type="text" name="num" id="num">
+        <button type="button" onclick="whatNum()">확인</button>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <td colspan="2">랜덤 숫자를 맞혀보세요.</td>
+        </tr>
+        <tr>
+            <td>입력한 숫자</td>
+            <td id="answer"></td>
+        </tr>
+        <tr>
+            <td>Up And Down?</td>
+            <td id="ranNum"></td>
+        </tr>
+    </table>
+    <script>
+        var rNum = 0 ;
+            // Math.random() ; 0 <= num < 1
+            // Math.ceil() : 올림
+            // Math.round() : 반올림
+            // Math.floor() : 내림
+            rNum = parseInt(Math.random()*10)+1;
+
+        // function actionNum() {
+        //     alert("호출성공");
+        //     randomNum();
+        //     console.log("랜덤번호 : ", rNum);
+        //     console.log("입력번호 : ", document.getElementById("num").value);
+        // }
+
+
+        function whatNum() {
+            var inputNum = document.getElementById("num").value;
+            var new_arr = [];
+            
+            // for (var i=0 ; i<5 ; i++) {
+                
+                new_arr[i] = inputNum;
+            var inputNum = document.getElementById("num").value;
+                if (inputNum > rNum) {
+                document.getElementById("ranNum").innerText="Down"
+                }
+                else if (inputNum < rNum) {
+                    document.getElementById("ranNum").innerText="Up"
+                }
+                else {
+                    document.getElementById("ranNum").innerText="정답";
+                }
+                
+                
+            console.log("랜덤번호 : ", rNum);
+            console.log("입력번호 : ", inputNum);
+            console.log(new_arr)
+            
+            
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생등록페이지</title>
+</head>
+<body>
+    <h2>학생등록페이지</h2>
+    <form action="#" method="post">
+    <!-- <form action="register.html" method="post"> -->
+        {% csrf_token %}   <!--데이터 암호화 문구-->
+        <br>
+        <label for="">이름</label>
+        <input type="text" name="s_name"><br>
+        <label for="">전공</label>
+        <input type="text" name="s_major"><br>
+        <label for="">나이</label>
+        <input type="text" name="s_age"><br>
+        <label for="">학년</label>
+        <input type="text" name="s_grade"><br>
+        <label for="">성별</label>
+        <input type="text" name="s_gender"><br>
+        <br>
+        <input type="submit" value="등록">
+        <input type="reset" value="취소">
+        
+    </form>
+</body>
+</html>

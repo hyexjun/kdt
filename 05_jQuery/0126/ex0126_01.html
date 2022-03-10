@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0126_01</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+        input {margin: 5px auto; height: 18px;}
+
+    </style>
+    <script>
+
+
+        let openWin;
+        function openChild(){
+            let data=$('#pInput').val();
+            openWin = window.open("popup1.html?pInput="+data+"","childForm","width=800,height=600,resizable=no,scrollbars=no");
+        }
+
+
+        function eatChild(){
+            let data=$('#sInput').val();
+            openWin = window.open("popup1.html?sInput="+data+"","childForm","width=800,height=600,resizable=no,scrollbars=no");
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+
+    <h2>부모창</h2>
+
+    <label>전달할 값 : </label>
+    <input type="text" name="pInput" id="pInput">
+    <button onclick="openChild()">아이디 중복 확인</button><br>
+
+    <!-- <label>전달받은 값 : </label>
+    <input type="text" name="sInput" id="sInput"> -->
+
+    
+
+</body>
+</html>
+
+

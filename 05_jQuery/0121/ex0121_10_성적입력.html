@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0121_10</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        input {
+            width: 100px;
+            height: 25px;
+            border: 1px solid #888;
+            margin-bottom: 10px;
+        }
+
+        table,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            width: 80px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+    <script>
+
+        $(function () {
+
+
+            $("#btn").click(function () {
+                // alert("호출 테스트");
+                // $("#tName td:nth-child(1)").text($("#sName").val());
+
+                let htmldata = "";
+                let sTotal = Number($("#sKor").val()) + Number($("#sEng").val()) + Number($("#sMath").val())
+                let sAvg = (sTotal / 3).toFixed(2)
+
+                htmldata += "<tr>";
+                htmldata += "<td>" + $("#sName").val() + "</td>";
+                htmldata += "<td>" + $("#sKor").val() + "</td>";
+                htmldata += "<td>" + $("#sEng").val() + "</td>";
+                htmldata += "<td>" + $("#sMath").val() + "</td>";
+                htmldata += "<td>" + sTotal + "</td>";
+                htmldata += "<td>" + sAvg + "</td>";
+                htmldata += "</tr>";
+
+
+                $("#contxt").prepend(htmldata);
+                $("#sName,#sKor,#sEng,#sMath").val("");
+                $("#sName").focus();
+
+
+
+            });
+
+
+
+
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>학생성적리스트</h2>
+    <form action="#" method="post">
+        <label>이름</label>
+        <input type="text" name="sName" id="sName" /><br />
+        <label>국어</label>
+        <input type="text" name="sKor" id="sKor" /><br />
+        <label>영어</label>
+        <input type="text" name="sEng" id="sEng" /><br />
+        <label>수학</label>
+        <input type="text" name="sEath" id="sMath" /><br />
+        <br>
+        <input type="button" id="btn" value="등록">
+        <!-- <button type="button" id="btn">등록</button> -->
+    </form>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <td>이름</td>
+                <td>국어</td>
+                <td>영어</td>
+                <td>수학</td>
+                <td>합계</td>
+                <td>평균</td>
+            </tr>
+        </thead>
+        <tbody id="contxt">
+            <!-- <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr> -->
+        </tbody>
+
+    </table>
+
+
+</body>
+
+</html>

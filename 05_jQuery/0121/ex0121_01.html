@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0121_01</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- 정의는 헤드에, 내용은 바디에 -->
+    <p id="p01"></p>
+    <script>
+        // 기본 구문
+        $(document).ready(function() {
+            // 이 문서를 다~~~ 읽고 준비해줘. <= 그래서 두번 돈다?
+            // 이 문장의 doc 한번이랑 맨 아래 22번줄에서도 돌고 해서 2번 돈다.
+        });
+
+        // 간편 구문
+        $(function(){
+
+        });
+
+
+        document.getElementById("p01").innerText="글자를 입력되게 해주세요.";
+    </script>
+</body>
+</html>

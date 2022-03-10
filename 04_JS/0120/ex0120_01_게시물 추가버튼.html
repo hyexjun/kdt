@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0120_01</title>
+    <style>
+        table, th, td { border: 1px solid black;
+                        border-collapse: collapse;
+                        text-align: center; }
+    </style>
+    <script>
+
+        function dataOpen() {
+            let dataHtml = '';
+            for (let i = 0 ; i < 10 ; i++) {
+                dataHtml += '<tr>';
+                dataHtml += '<td>1</td>';
+                dataHtml += '<td>게시물 등록</td>';
+                dataHtml += '<td>2022-01-20</td>';
+                dataHtml += '<td>1</td>';
+            }
+
+            document.getElementById('dataIn').innerHTML= dataHtml;
+            
+        }
+
+        function dataClose() {
+
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="dataOpen()">데이터 가져오기</button>
+    <button type="button" onclick="dataClose()">그만 가져오기</button>
+    <br/>
+    <br/>
+    <table>
+        <colgroup>
+            <col width = '50px'>
+            <col width = '200px'>
+            <col width = '100px'>
+            <col width = '80px'>
+        </colgroup>
+        <thead>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>날짜</td>
+                <td>조회수</td>
+            </tr>
+        </thead>
+        <tbody id="dataIn">
+
+        </tbody>
+    </table>
+    <script>
+        // let arr = [1,2,3,4,5,6,7];
+        // document.write(arr.slice(3,5));
+
+        // document.write(a);     // 변수 혹은 클래스명
+        // document.write(a());   // 함수명
+
+
+        // function printName(name1) {
+        //     document.write(name1,' <br>');
+        // }
+
+        // let arrName = ['홍길동', '홍길순', '홍길자', '이순신', '김유신'];
+        // printName(arrName);
+
+    </script>
+</body>
+</html>

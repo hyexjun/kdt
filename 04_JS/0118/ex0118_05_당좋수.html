@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;
+            text-align: center; }
+        table, tr, td { margin: 0 auto;
+                        border: 1px solid black;
+                        border-collapse: collapse; }
+        #f_num { color: red; font-weight: 600; }
+        #num { color: blue; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <h2>홀짝??</h2>
+    <table>
+        <tr>
+            <td>당신이 좋아하는 숫자</td>
+            <td id="f_num">
+            </td>
+        </tr>
+        <tr>
+            <td>짝수 또는 홀수?</td>
+            <td id="num">
+                <script>
+                    var num = prompt('당신이 좋아하는 숫자를 입력하세요.');
+                    if (num/2==0) {
+                        document.write(num," 짝수");
+                        document.getElementById("f_num").innerText=num;
+                        document.getElementById("num").innerText="짝수";
+                    } else {
+                        document.write(num," 홀수");
+                        document.getElementById("f_num").innerText=num;
+                        document.getElementById("num").innerText="홀수";
+                    }
+                </script>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

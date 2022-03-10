@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0120_05</title>
+    <style>
+
+    </style>
+    <script>
+        function loginCheck() {
+            let u_id = document.getElementById('id').value;
+            let u_pw = document.getElementById('pw').value;
+
+            if (u_id == 'admin') {
+                if (u_pw == '1234') {
+                    alert('로그인 성공');
+                    frm.submit();
+                } else {
+                    alert('비밀번호가 일치하지 않습니다.');
+                    document.getElementById('pw').value="";
+                    document.getElementById('pw').focus();
+                }
+            } else {
+                alert('존재하지 않는 아이디입니다.');
+                document.getElementById('id').value="";
+                document.getElementById('pw').value="";
+                document.getElementById('id').focus();
+            }
+            return;
+        }
+    </script>
+</head>
+<body>
+    <form action="loginCheck" method="get">
+        <label>아이디</label>
+        <input type="text" name="id" id="id"><br>   
+        <label>패스워드</label>
+        <input type="password" name="pw" id="pw"><br>
+        <input type="button" onclick="loginCheck()" value="로그인">
+    </form>
+    <script>
+
+    </script>
+</body>
+</html>

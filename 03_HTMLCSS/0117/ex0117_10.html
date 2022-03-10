@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/prefixfree.min.js"></script>
+    <style>
+        img { width: 300px; }
+        .d01 { width: 300px; height: 200px;
+               animation: imgtran 1s alternate infinite ease-in-out; }
+        
+        @keyframes imgtran { 
+            from { transform: translateX(0); }
+            to { transform: translateX(300px); }
+         }
+
+        #back01 { width: 640px; height: 480px; }
+        /* #back01:hover { 110%; } */
+
+        .d02 { width: 300px; height: 300px;
+               border: 2px solid black;
+                }
+
+    </style>
+</head>
+<body>
+    <div>
+        <img id="back01" src="../images/bts1.jpg" alt="방탄소년단">
+    </div>
+    <div class="d01">
+        <img src="../images/car2-1.png" alt="자동차">
+    </div>
+</body>
+</html>

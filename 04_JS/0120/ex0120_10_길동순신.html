@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0120_10</title>
+    <style>
+        table, td { border: 1px solid black;
+                    border-collapse: collapse;
+                    width: 150px; text-align: center; height: 30px;}
+    </style>
+</head>
+<body>
+    <h3>허어어..</h3>
+    <button type="button" onclick="calBmi1('홍길동',80,180)">홍길동</button>
+    <button type="button" onclick="calBmi1('이순신',70,167)">이순신</button>
+    <br><br>
+    <h3>개인 BMI 계산기</h3>
+    <form action="">
+        <label>키(cm)</label>
+        <input type="text" name="cm" id="cm">
+        <label>몸무게(kg)</label>
+        <input type="text" name="kg" id="kg">
+        <button type="button" onclick="calBmi2()">계산하기</button>
+    </form>
+    <h4 id="final"></h4>
+    <script>
+        // // 함수 파라미터로 돌리기
+        function calBmi1(csName,weight,height) {
+            document.write(csName,"의 BMI는 ",calBmi3(weight,height),"입니다.")
+        }
+
+        // 인풋 가져와서 돌리기
+        function calBmi2() {
+            let weight = Number(document.getElementById("kg").value);
+            let height = Number(document.getElementById("cm").value);
+            let bmi = calBmi3(weight,height);
+
+            document.getElementById("final").innerText="당신의 bmi는 "+bmi+"입니다.";
+
+            // let final = (document.getElementById("final").innerText=bmi);
+            // let x = print(a); << 이거랑 같은 짓이다....
+        }
+
+        function calBmi3(a,b) {
+            return (a/((b*0.01)**2)).toFixed(2);
+        }
+
+        let calBmi3 = function (a,b) {
+            return (a/((b*0.01)**2)).toFixed(2);
+        }
+
+        let calBmi3 = (a,b) => (a/((b*0.01)**2)).toFixed(2);
+
+    </script>
+</body>
+</html>

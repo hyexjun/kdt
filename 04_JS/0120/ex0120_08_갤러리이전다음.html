@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0120_08</title>
+    <style>
+        #gZone { 
+            width: 700px; height: 600px; overflow: hidden;
+            border: 3px solid black;
+            margin: 20px auto;
+         }
+        #btn {
+            width: 220px; height: 50px;
+            margin: 0 auto;
+        }
+        button {
+            width: 100px; height: 50px;
+            border-radius: 5px;
+        }
+        img {
+            width: 700px;
+        }
+    </style>
+    <script>
+        let num=1;
+        function gallery(check) {
+            alert(check);
+
+            if (check==1) {
+                if (num==5) num=0; {
+                    num++;
+                }
+            } else {
+                if (num==1) num=6; {
+                    num--;
+                }
+            }
+
+            let imgId = document.getElementById('photo');
+            imgId.setAttribute("src","../../images/img"+num+".jpg");
+        }
+    </script>
+</head>
+<body>
+    <div id="gZone">
+        <img src="../../images/img1.jpg" id="photo" alt="펭수">
+    </div>
+    <div id="btn">
+        <button type="button" onclick="gallery(0)">이전</button>
+        <button type="button" onclick="gallery(1)">다음</button>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>

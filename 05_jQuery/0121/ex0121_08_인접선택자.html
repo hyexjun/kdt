@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0121_08</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        ul {width: 200px; height: 210px;
+            border: 1px solid burlywood;}
+    </style>
+    <script>
+
+        $(function(){
+
+            let num=2;
+            let num2=200;
+            $("li").click(function(){
+                $("#spot").text($(this).text()+"(이)가 클릭되었습니다.");
+                $(this).css("color","red");
+                $(this).next().text("✔"); // this.이거 옆에 있는 것에다가 text하겠다.
+                $(this).parent().css("border",num+"px solid burlywood")
+                $(this).parent().css("width",num2+"px")
+                num++;
+                num2 += 50; // 클릭할 때마다 24번줄 width 추가요~
+
+            }); 
+
+
+
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+    <ul>
+        <li>네이버</li><span></span>
+        <li>카카오</li><span></span>
+        <li>라인</li><span></span>
+        <li>쿠팡</li><span></span>
+        <li>배달의 민족</li><span></span>
+    </ul>
+    <br>
+    <p>상단의 리스트를 클릭하세요.</p>
+    <span id="spot"></span> <!--뭐 클릭했는지 나올 곳-->
+
+</body>
+</html>

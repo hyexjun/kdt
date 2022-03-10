@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;
+            box-sizing: border-box; }
+        #main { width: 1200px; height: 3000px;
+                border: 2px solid black;
+                box-sizing: border-box; }
+        #d01, #d02, #d03, #d04, #d05, #d06 { width: 100px; height: 100px; }
+        #d01 { background: yellow; position: relative; left: 1096px; }
+        #d02 { background: green; position: relative; left: 400px; }
+        #d03 { background: blue; position: relative; left: 1096px; top: 898px; }
+        #d04 { background: purple; position: relative; left: 550px; top: 250px; }
+        #d05 { background: plum; position: relative; top: 698px; }
+        #d06 { background: pink; position: fixed; left: 1300px; top: 1000px;
+               text-align: center; font-size: 20px;
+               padding-top: 20px; border: 2px solid salmon; }
+    </style>
+</head>
+<body>
+    <h2 id="top">포지셔닝</h2>
+    <div id="main">
+        <div id="d01"></div>
+        <div id="d02"></div>
+        <div id="d03"></div>
+        <div id="d04"></div>
+        <div id="d05"></div>
+        <a href="#top"><div id="d06">▲<br/>top</div></a>
+    </div>
+</body>
+</html>
