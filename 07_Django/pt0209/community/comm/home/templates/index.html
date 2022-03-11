@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>메인페이지</h2>
+    {% if request.session.session_id %}
+       <p>{{request.session.session_id}}님 환영합니다.</p>
+       <ul>
+           <li><a href="{% url 'board:notice' %}">공지사항</a></li>
+           <li><a href="{% url 'member:join01' %}">회원가입</a></li>
+           <li><a href="{% url 'board:blist' %}">게시판리스트</a></li>
+           <li><a href="{% url 'board:publicData' %}">공공데이터</a></li>
+           <li><a href="{% url 'board:publicData2' %}">공공데이터2</a></li>
+           <li><a href="{% url 'blockhtml:main' %}">block메인</a></li>
+           <li><a href="{% url 'blockhtml:notice_list' %}">block게시판</a></li>
+           <li><a href="{% url 'blockhtml:notice_read' %}">block뷰</a></li>
+           <li><a href="/admin">관리자페이지</a></li>
+           <li><a href="{% url 'member:logout' %}">로그아웃</a></li>
+           <li>회원정보리스트</li>
+       </ul>
+       {% else %}
+       <p>로그인을 하셔야 합니다.</p>   
+       <ul>
+           <li><a href="{% url 'member:login' %}">로그인</a></li>
+           <li><a href="{% url 'member:join01' %}">회원가입</a></li>
+       </ul>
+    {% endif %}
+    
+</body>
+</html>

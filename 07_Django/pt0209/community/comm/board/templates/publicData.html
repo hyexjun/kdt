@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시판</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/notice_list.css' %}">
+  <script>
+
+  </script>
+  <style>
+    #img01{width:100px;}
+  </style>
+</head>
+<body>
+<section>
+    <a href="{% url 'index' %}"><h1>NOTICE</h1></a>
+    <div class="wrapper">
+      <form action="{% url 'board:blist' %}" id="search" method="post">
+        {% csrf_token %}
+        {% if category %}
+        <select name="category" id="category">
+          <option value="all" {% if category in 'all'%}selected{% endif %} >전체</option>
+          <option value="title" {% if category in 'title'%}selected{% endif %}>제목</option>
+          <option value="content" {% if category in 'content'%}selected{% endif %}>내용</option>
+        </select>
+        {% else %}
+          <select name="category" id="category">
+            <option value="all">전체</option>
+            <option value="title">제목</option>
+            <option value="content">내용</option>
+          </select>
+        {% endif %}  
+
+        <div class="title">
+          {% if searchword %}
+            <input type="text" id="searchword" name="searchword" size="16" value="{{searchword}}">
+          {% else %}
+            <input type="text" id="searchword" name="searchword" size="16">
+          {% endif %}
+        </div>
+        <button type="button" onclick="searchBtn()"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+
+    <table>
+      <colgroup>
+        <col width="15%">
+        <col width="15%">
+        <col width="15%">
+        <col width="15%">
+        <col width="40%">
+      </colgroup>
+      <!-- 제목부분 -->
+      <tr>
+        <th>제목</th>
+        <th>촬영장소</th>
+        <th>촬영날짜</th>
+        <th>촬영자</th>
+        <th>이미지경로</th>
+      </tr>
+      <!-- 내용부분 -->
+      <tbody id="tbody">
+        {% if publicData %}
+          {% for pdata in publicData %}
+            <tr>
+              <td><span class='table-notice'>{{pdata.galTitle}}</span></td>
+              <td class='table-title' id='pInput'>
+                {{pdata.galPhotographyLocation}}
+              </td> 
+              <td>{{pdata.galCreatedtime}}</td>
+              <td>{{pdata.galPhotographer}}</td>
+              <td><img id="img01" src="{{pdata.galWebImageUrl}}"></td>
+            </tr>
+          {% endfor %}
+        {% else %}
+          <tr>
+            <td colspans='5'>데이터가 없습니다.</td>
+          </tr>
+        {% endif %}
+      </tbody>
+      
+    </table>
+
+    <ul class="page-num">
+      <!-- 이전페이지 정리 -->
+      {% if blist.has_previous %}
+        <a href="?nowpage=1"><li class="first"></li></a>
+        <a href="?nowpage={{blist.previous_page_number }}"><li class="prev"></li></a>
+      {% else %}
+        <li class="first"></li>
+        <li class="prev"></li>
+      {% endif %}
+
+
+
+      <!-- 순차적 넘버링 -->
+      <a href="?nowpage=1"><li class="num off"><div>1</div></li></a>
+      <a href="?nowpage=2"><li class="num off"><div>2</div></li></a>
+      <a href="?nowpage=3"><li class="num off"><div>3</div></li></a>
+
+
+
+
+
+      <!-- 이후 페이지 정리 -->
+      {% if blist.has_next %}
+        <a href="?nowpage={{ blist.next_page_number }}"><li class="next"></li></a>
+        <a href="?nowpage={{blist.paginator.num_pages }}"><li class="last"></li></a>
+      {% else %}
+        <li class="next"></li>
+        <li class="last"></li>
+      {% endif %}
+    </ul>
+
+    <a href="{% url 'board:bwrite' %}"><div class="write">쓰기</div></a>
+  </section>
+
+</body>
+</html>
