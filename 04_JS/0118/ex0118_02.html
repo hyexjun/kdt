@@ -10,22 +10,18 @@
     <script>
         var num1 = 15;
         var num2 = 3;  //document에 출력(write)하라는 의미와 비슷
-        document.write("num1+num2는 ",num1+num2,"입니다.<br/>");
-        document.write("num1-num2는 ",num1-num2,"입니다.<br/>");
-        document.write("num1*num2는 ",num1*num2,"입니다.<br/>");
-        document.write("num1/num2는 ",num1/num2,"입니다.<br/>");
 
         num3 = num2++;
-        document.write(num3,"<br/>");
-        document.write(num2,"<br/>");
+        document.write(num3,"<br/>");  // 3
+        document.write(num2,"<br/>");  // 4
 
         num3 = num2++;
-        document.write(num3,"<br/>");
-        document.write(num2,"<br/>");
+        document.write(num3,"<br/>");  // 4
+        document.write(num2,"<br/>");  // 5
 
         num3 = ++num2;
-        document.write(num3,"<br/>");
-        document.write(num2,"<br/>");
+        document.write(num3,"<br/>");  // 6
+        document.write(num2,"<br/>");  // 6
     </script>  <!--js는 ; 필수!!!-->
 </body>
 </html>
