@@ -8,11 +8,11 @@ function add(a, b) {
 
 function doSomething(add) {
     console.log(add);
-    const result = sum;
+    const result = add(2, 3);
     console.log(result);
 }
 
 
 // 함수 호출
 
-console.log(result);
+doSomething(add);
