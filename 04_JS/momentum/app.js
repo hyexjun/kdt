@@ -21,3 +21,6 @@ function onLoginSubmit(event) {
 }
 
 loginForm.addEventListener("submit", onLoginSubmit);
+// 일종의 조건문처럼 addEventListener(A, B);
+// A라는 조건에 걸릴 때, B를 실행하겠음 이기 때문에 B()라고 쓰지 않는다
+// B()는 걍 바로 함수 호출이니까..
