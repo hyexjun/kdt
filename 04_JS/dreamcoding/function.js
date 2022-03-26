@@ -17,6 +17,8 @@ function doSomething(add) {
     console.log(result);
 }
 
+// 이건 함수를 무명으로 선언한 뒤에 const로 선언
+// 엄밀히 함수는 무명이고 그 함수를 변수에 할당한 것
 const dodo = function (add) {
     console.log(add);
     const result = add(5, 3);
