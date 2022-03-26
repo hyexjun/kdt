@@ -155,7 +155,12 @@ footer {
   /* border: 1px solid blue; */
 }
 
-.logo {
+.container {
+  height: 100hv;
+  display: flex;
+}
+
+/* .logo {
   float: left;
   width: 200px;
   height: 100px;
@@ -165,13 +170,12 @@ footer {
   margin-top: 22px;
   margin-left: 15%;
   background: silver;
-}
+} */
 
-.spanbox {
-  /* border: 1px solid red; */
-  /* width: 300px; */
+/* .spanbox {
+  border: 1px solid red;
+  width: 300px;
   float: left;
   margin: auto 0 auto 5%;
   margin-top: 35px;
-}
-
+} */
