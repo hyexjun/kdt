@@ -32,24 +32,21 @@
 
         $(function(){
             $("#btn").click(function(){
+
                 let htmldata="";
 
-                htmldata += "<tr>";
-                htmldata += "<td>"+$("#uId").val()+"</td>";
-                htmldata += "<td>"+$("#uName").val()+"</td>";
-                htmldata += "<td>"+$("#uMail").val()+"</td>";
-                htmldata += "<td>"+$("#inDate").val()+"</td>";
-                htmldata += "</tr>";
+                    htmldata += "<tr>";
+                    htmldata += "<td>"+$("#uId").val()+"</td>";
+                    htmldata += "<td>"+$("#uName").val()+"</td>";
+                    htmldata += "<td>"+$("#uMail").val()+"</td>";
+                    htmldata += "<td>"+$("#inDate").val()+"</td>";
+                    htmldata += "</tr>";
 
-                $("#contents").append(htmldata);
-                $("#uId,#uName,#uMail,#inDate").val("");
-                $("#uId").focus();
-
-
+                    $("#contents").append(htmldata);
+                    $("#uId,#uName,#uMail,#inDate").val("");
+                    $("#uId").focus();
 
             });
-
-            
 
         });
 
