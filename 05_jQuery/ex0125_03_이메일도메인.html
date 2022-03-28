@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,9 +13,9 @@
     </style>
     <script>
 
-        $(function(){
+        $(function () {
 
-            $("#email_url").change(function(){
+            $("#email_url").change(function () {
 
                 if ($(this).val()) {
                     $("#email02").removeAttr("readonly");
@@ -22,14 +23,11 @@
                 } else {
 
                 }
-                
+
                 // alert($("#email02").prop("readonly"));
 
-                
+
             });
-            
-
-
 
 
         });
@@ -38,6 +36,7 @@
     </script>
 
 </head>
+
 <body>
 
     <input type="text" name="email01" id="email01">@
@@ -50,7 +49,8 @@
         <option value="" id="">직접 입력</option>
 
     </select>
-    
+
 
 </body>
+
 </html>
