@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex0120_10</title>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 150px;
+            text-align: center;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>길동 순신 BMI 계산기</h3>
+    <button type="button" onclick="calBmi1('홍길동',80,180)">홍길동</button>
+    <button type="button" onclick="calBmi1('이순신',70,167)">이순신</button>
+    <br><br>
+    <div id="textBox"></div>
+    <br><br>
+    <h3>개인 BMI 계산기</h3>
+    <form action="">
+        <label>키(cm)</label>
+        <input size="5" type="text" name="cm" id="cm">
+        <label>몸무게(kg)</label>
+        <input size="5" type="text" name="kg" id="kg">
+        <button type="button" onclick="calBmi2()">계산하기</button>
+    </form>
+    <h4 id="final"></h4>
+    <script defer src="ex0120_10_길동순신.js"></script>
+</body>
+
+</html>

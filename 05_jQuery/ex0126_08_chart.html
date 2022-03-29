@@ -29,13 +29,13 @@
                         chartLabels=[];
                         chartData=[];
 
-                        alert("성공"+data);    // {"2015":1300}
+                        alert("호출 성공");    // {"2015":1300}
 
                         $.each(data,function(key, value){
                             // alert("key:"+key);
                             // alert("key:"+value);
                             chartLabels.push(value.iyear);  // [2015,2016,2017, ... ,2021]
-                            chartData.push(value.iincome);   // [1300, ... , 1600]
+                            chartData.push(value.iincome);  // [1300, ... , 1600]
 
                         });
 
@@ -74,8 +74,6 @@
                         
                     }
 
-
-
                 })
             });
             
@@ -95,11 +93,7 @@
                         }
                     }
                 });
-            
             }
-
-            
-
 
 
 
