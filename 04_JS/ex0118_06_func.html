@@ -1,59 +1,74 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        * { margin: 0; padding: 0; }
-        table, tr, td { width: 150px; text-align: center;
-                        border: 1px solid black;
-                        border-collapse: collapse; }
-        #plus { color: red; font-weight: 600; }
-        #multi { color: blue; font-weight: 600; }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      table,
+      tr,
+      td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      #plus {
+        color: red;
+        font-weight: 600;
+      }
+      #multi {
+        color: blue;
+        font-weight: 600;
+      }
     </style>
     <script>
-        function cal() {
-            var num1 = document.getElementById("num1").value;
-            var num2 = document.getElementById("num2").value;
+      function cal() {
+        var num1 = document.getElementById('num1').value;
+        var num2 = document.getElementById('num2').value;
 
-            document.getElementById("plus").innerText = Number(num1)+Number(num2);
-            document.getElementById("multi").innerText = Number(num1)*Number(num2);
+        document.getElementById('plus').innerText = Number(num1) + Number(num2);
+        document.getElementById('multi').innerText =
+          Number(num1) * Number(num2);
 
-                if (num1>num2) {
-                    document.getElementById("com").innerText = num1;
-                } else if (num2>num1) {
-                    document.getElementById("com").innerText = num2;
-                } else {
-                    document.getElementById("com").innerText = "같음";
-                }
+        if (num1 > num2) {
+          document.getElementById('com').innerText = num1;
+        } else if (num2 > num1) {
+          document.getElementById('com').innerText = num2;
+        } else {
+          document.getElementById('com').innerText = '같음';
         }
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <form action="">
-        <label for="">숫자 1</label>
-        <input type="text" name="num1" id="num1">
-        <br/>
-        <label for="">숫자 2</label>
-        <input type="text" name="num2" id="num2">
-        <br/>
-        <button type="button" onclick="cal()">연산</button>
+      <label for="">숫자 1</label>
+      <input type="text" name="num1" id="num1" />
+      <br />
+      <label for="">숫자 2</label>
+      <input type="text" name="num2" id="num2" />
+      <br />
+      <button type="button" onclick="cal()">연산</button>
     </form>
     <table>
-        <tr>
-            <td>더하기</td>
-            <td id="plus"></td>
-        </tr>
-        <tr>
-            <td>곱하기</td>
-            <td id="multi"></td>
-        </tr>
-        <tr>
-            <td>비교</td>
-            <td id="com"></td>
-        </tr>
+      <tr>
+        <td>더하기</td>
+        <td id="plus"></td>
+      </tr>
+      <tr>
+        <td>곱하기</td>
+        <td id="multi"></td>
+      </tr>
+      <tr>
+        <td>비교</td>
+        <td id="com"></td>
+      </tr>
     </table>
-</body>
+  </body>
 </html>
