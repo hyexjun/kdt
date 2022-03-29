@@ -1,5 +1,4 @@
 // Object 알아보기~~
-
 const name = 'mille';
 const age = 4;
 print1(name, age);
@@ -8,8 +7,8 @@ function print1(name, age) {
     console.log(name);
     console.log(age);
 }
-
 // 이렇게 할 경우 params가 많으면 굉장히 더러워진다..
+// params 5개면 줄줄줄 쓸거야..?
 
 const ellie = { name: 'ellie', age: 5 };   // object 만드는 방법1 : obj literal syntax
 function print2(person) {

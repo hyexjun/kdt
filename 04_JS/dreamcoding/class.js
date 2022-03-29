@@ -1,27 +1,32 @@
 'use strict';
+// class: template
+// object: instance of a class
+// Javascript classes
+// - introduced in ES6
+// - syntactical sugar over prototype-based inheritance
 
+
+// 1. Class declarations 클래스 선언?
 class Person {
+    // construcor
     constructor(name, age) {
         // fields
         this.name = name;
         this.age = age;
     }
-
-    // method
+    // methods
     speak() {
         console.log(`${this.name}: hello!`);
     }
 }
 
-const ellie = new Person('ellie', 20);
-console.log(ellie.name);
-console.log(ellie.age);
-ellie.speak();
+const helli = new Person('hllie', 20);
+console.log(helli.name);
+console.log(helli.age);
+helli.speak();
 
 
-
-// getter and setters
-
+// 2. Getter and Setter
 class User {
     constructor(firstName, lastName, age) {
         this.firstName = firstName;
