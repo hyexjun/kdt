@@ -23,7 +23,7 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings(username) {
-    greeting.innerText = `No sibal Keep going, ${username}!!`;
+    greeting.innerText = `Hello, ${username}.`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
