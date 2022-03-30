@@ -1,59 +1,96 @@
-* { margin: 0; padding: 0;
-    box-sizing: border-box;
-    list-style-type: none; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
 
-header { width: 100%; height: 121px; }
+header {
+  width: 100%;
+  height: 121px;
+}
 
-.top_menu { width: 430px; height: 40px;
-            float: left; }
-.top_menu ul li:after { padding-left:5px;
-                        content:"ㅣ"; }
-.top_menu ul li:last-child(2):after { padding-left: 8px; content: "" }
-.top_menu ul li:last-child:after { content: "" }
+.top_menu {
+  width: 430px;
+  height: 40px;
+  float: left;
+}
+.top_menu ul li:after {
+  padding-left: 5px;
+  content: 'ㅣ';
+}
+.top_menu ul li:last-child(2):after {
+  padding-left: 8px;
+  content: '';
+}
+.top_menu ul li:last-child:after {
+  content: '';
+}
 
+nav {
+  width: 1290px;
+  height: 120px;
+  margin: 0 auto;
+  border: 1px solid #e8e8e8;
+}
 
-nav { width: 1290px; height: 120px;
-      margin: 0 auto;
-      border: 1px solid #e8e8e8; }
+.nav01 {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #e8e8e8;
+}
+.nav01 ul li {
+  float: left;
+  font-size: 10px;
+  color: #666;
+  width: 400px;
+  height: 30px;
+  margin-right: 0px;
+}
 
-.nav01 { width: 100%; height: 50px;
-         border: 1px solid #e8e8e8; }
-.nav01 ul li { float: left;
-               font-size: 10px;
-               color: #666;
-               width: 400px; height: 30px;
-               margin-right: 0px; }
+.nav02 {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #e8e8e8;
+}
+.nav02 ul {
+  width: 100%;
+  height: 80px;
+  border: 1px solid black;
+}
+.nav02 ul li {
+  float: left;
+  font-size: 20px;
+  color: #666;
+  width: 150px;
+  height: 80px;
+  border: 1px solid black;
+  text-align: left;
+}
 
-.nav02 { width: 100%; height: 80px;
-         border: 1px solid #e8e8e8; }
-.nav02 ul { width: 100%; height: 80px;
-            border: 1px solid black; }
-.nav02 ul li { float: left;
-               font-size: 20px;
-               color: #666;
-               width: 150px; height: 80px;
-               border: 1px solid black;
-               text-align: left; }
+.logo {
+  width: 135px;
+  height: 50px;
+  background: url(../images/img_logo_re_forest.png) no-repeat;
+  float: left;
+  margin-top: 40px;
+  border: 1px solid black;
+}
 
-.logo { width: 135px; height: 50px;
-        background: url(../images/img_logo_re_forest.png) no-repeat;
-        float: left;
-        margin-top: 40px;
-        border: 1px solid black; }
-
-
-
-            .bottom_menu{width:1000px; height: 78px; float: right;
-                      margin:0 auto;
-                      box-sizing: border-box;
-                      border: 1px solid #e8e8e8;
-            }
-            .bottom_menu ul li{float: left;
-                         font-size: 15px;
-                         font-weight: 600;
-                         color:#666;
-                         text-align: left;
-                         width: 120px; height: 70px;    
-        
-            }
-    
+.bottom_menu {
+  width: 1000px;
+  height: 78px;
+  float: right;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border: 1px solid #e8e8e8;
+}
+.bottom_menu ul li {
+  float: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  text-align: left;
+  width: 120px;
+  height: 70px;
+}

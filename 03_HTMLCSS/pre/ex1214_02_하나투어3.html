@@ -1,92 +1,130 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>ex1214_01</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * { margin:0; padding: 0px;
-            font-family: 'Noto Sans KR', sans-serif;
-            box-sizing: border-box; }
-        #container { width: 90%; height: 800px;
-                     padding-top: 60px;
-                     margin : 0 auto;
-                     background-color: rgb(236, 245, 208); }
-        .img { background: url(../images/023.jpg) no-repeat;
-               width: 588px; height: 536px;
-               float: left; }
-        .text { width: 588px; height: 536px;
-               float: left;
-               padding-left: 30px;}
-        #top { font-size: 15px;
-               font-weight: bold;
-               border-bottom: 3px solid #111;
-               padding: 0 0 8px;
-               margin: 17px 0 18px;
-               line-height: 1;
-               width: 138px; }
-        #title { font-size: 30px;
-                 font-weight: 600;
-                 line-height: 40px;
-                 color: #111; }
-        #main { color: #666;
-                line-height: 25px;
-                margin-top: 25px; }
-        #bottom { padding-top: 100px; }
+      * {
+        margin: 0;
+        padding: 0px;
+        font-family: 'Noto Sans KR', sans-serif;
+        box-sizing: border-box;
+      }
+      #container {
+        width: 90%;
+        height: 800px;
+        padding-top: 60px;
+        margin: 0 auto;
+        background-color: rgb(236, 245, 208);
+      }
+      .img {
+        background: url(../images/023.jpg) no-repeat;
+        width: 588px;
+        height: 536px;
+        float: left;
+      }
+      .text {
+        width: 588px;
+        height: 536px;
+        float: left;
+        padding-left: 30px;
+      }
+      #top {
+        font-size: 15px;
+        font-weight: bold;
+        border-bottom: 3px solid #111;
+        padding: 0 0 8px;
+        margin: 17px 0 18px;
+        line-height: 1;
+        width: 138px;
+      }
+      #title {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 40px;
+        color: #111;
+      }
+      #main {
+        color: #666;
+        line-height: 25px;
+        margin-top: 25px;
+      }
+      #bottom {
+        padding-top: 100px;
+      }
 
-        .menutop { font-size: 15px;
-                   font-weight: 600;
-                   color: #111;
-                   line-height: 1;
-                   margin-top: 7px; }
-        .menubody { font-size: 14px;
-                    color: #666;
-                    line-height: 16px;
-                    margin-top: 5px; }
-        .menubottom { font-size: 18px;
-                      font-weight: 600;
-                      color: #111;
-                      line-height: 50px; }
-        .won { font-size: 15px;
-               font-weight: 400;
-               color: #111;
-               line-height: 50px; }
-        ul { list-style-type: none; }
-        img { width: 102px; height: 102px; }
-
+      .menutop {
+        font-size: 15px;
+        font-weight: 600;
+        color: #111;
+        line-height: 1;
+        margin-top: 7px;
+      }
+      .menubody {
+        font-size: 14px;
+        color: #666;
+        line-height: 16px;
+        margin-top: 5px;
+      }
+      .menubottom {
+        font-size: 18px;
+        font-weight: 600;
+        color: #111;
+        line-height: 50px;
+      }
+      .won {
+        font-size: 15px;
+        font-weight: 400;
+        color: #111;
+        line-height: 50px;
+      }
+      ul {
+        list-style-type: none;
+      }
+      img {
+        width: 102px;
+        height: 102px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container">
-        <div class="img"></div>
-        <div class="text">
-            <div id="top">꿈을 담은 특별한 여행</div>
-            <div id="title">하나 Original</div>
-            <div id="main">
-                [추천키워드] Eco-Friendly 환경친화적인<br/>
-                <br/>
-                여행을 구성하는 다양한 요소에서 환경을 생각하는,<br/>
-                환경친화적인 일상을 담은 여행을 만나보세요.
-            </div>
-            <div id="bottom">
-                <ul>
-                    <li>
-                        <img src="../images/ul1.jpg" alt="스위스"/><span>
-                        <p class="menutop">[스위스] 기차/대중교통 여행</p>
-                        <p class="menubody">알프스의 청정자연을 지키는 여행</p>
-                        <p class="menubottom">4,119,000<span class="won">원~</span></p></span>
-                    </li>
-                    <li>
-                        <img src="../images/ul2.jpg" alt="스페인"/>
-                        <p class="menutop">[스페인] 친환경&상생여행</p>
-                        <p class="menubody">환경과 사회적 책임을 생각하는 여행</p>
-                        <p class="menubottom">3,690,000<span class="won">원~</span></p>
-                    </li>
-                </ul>
-            </div>
+      <div class="img"></div>
+      <div class="text">
+        <div id="top">꿈을 담은 특별한 여행</div>
+        <div id="title">하나 Original</div>
+        <div id="main">
+          [추천키워드] Eco-Friendly 환경친화적인<br />
+          <br />
+          여행을 구성하는 다양한 요소에서 환경을 생각하는,<br />
+          환경친화적인 일상을 담은 여행을 만나보세요.
         </div>
+        <div id="bottom">
+          <ul>
+            <li>
+              <img src="../images/ul1.jpg" alt="스위스" /><span>
+                <p class="menutop">[스위스] 기차/대중교통 여행</p>
+                <p class="menubody">알프스의 청정자연을 지키는 여행</p>
+                <p class="menubottom">
+                  4,119,000<span class="won">원~</span>
+                </p></span
+              >
+            </li>
+            <li>
+              <img src="../images/ul2.jpg" alt="스페인" />
+              <p class="menutop">[스페인] 친환경&상생여행</p>
+              <p class="menubody">환경과 사회적 책임을 생각하는 여행</p>
+              <p class="menubottom">3,690,000<span class="won">원~</span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
