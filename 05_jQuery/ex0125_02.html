@@ -1,74 +1,57 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0125_02</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-
-
-    </style>
+    <style></style>
     <script>
+      $(function () {
+        // $("#year").append('<option value="'+year+'">'+year+'년</option')
+        // 쓰고 있었스니다만..
 
-        $(function(){
+        let data_html = '';
+        for (i = 1901; i <= 2022; i++) {
+          data_html += '<option value=' + i + '>' + i + '년</option>';
+        }
+        $('#year').html(data_html);
 
-            
-            // $("#year").append('<option value="'+year+'">'+year+'년</option')
-            // 쓰고 있었스니다만..
+        let data_html2 = '';
+        for (i = 1; i <= 12; i++) {
+          data_html2 += '<option value=' + i + '>' + i + '월</option>';
+        }
+        $('#month').html(data_html2);
 
-            let data_html="";
-            for (i=1901;i<=2022;i++) {
-                data_html += '<option value='+i+'>'+i+'년</option>'
-            }
-            $("#year").html(data_html);
-
-
-            let data_html2="";
-            for (i=1;i<=12;i++) {
-                data_html2 += '<option value='+i+'>'+i+'월</option>'
-            }
-            $("#month").html(data_html2);
-
-
-
-            let count = 1;
-            $("#year,#month").change(function(){
-                // $(".txt").text(count,"번째 select box를 변경하였습니다.");
-                $(".txt").text($("#year").val()+"년도 "+$("#month").val()+"월을 선택하였습니다.");
-                count++;
-            });
-            
-
-
-
+        let count = 1;
+        $('#year,#month').change(function () {
+          // $(".txt").text(count,"번째 select box를 변경하였습니다.");
+          $('.txt').text(
+            $('#year').val() +
+              '년도 ' +
+              $('#month').val() +
+              '월을 선택하였습니다.'
+          );
+          count++;
         });
-
-
+      });
     </script>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <select id="year">
-        <!-- <option value="1901">1901년</option>
+      <!-- <option value="1901">1901년</option>
         <option value="1902">1902년</option>
         <option value="1903">1903년</option>
         <option value="1904">1904년</option>
         <option value="1905">1905년</option> -->
     </select>
     <select id="month">
-        <!-- <option value="1">1월</option>
+      <!-- <option value="1">1월</option>
         <option value="2">2월</option>
         <option value="3">3월</option> -->
     </select>
 
     <p class="txt"></p>
-
-    
-
-    
-
-</body>
+  </body>
 </html>

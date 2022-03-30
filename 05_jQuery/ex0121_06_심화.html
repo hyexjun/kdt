@@ -1,71 +1,55 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0121_06</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        #s02 {color: red;}
+      #s02 {
+        color: red;
+      }
     </style>
     <script>
-        $(function(){
+      $(function () {
+        // $("#btn").click(function(){
+        //     if (($("#id").val().length)>=8) {
+        //         $(alert("정상입니다."));
+        //         $("#s01").text("");
+        //     } else {
+        //         $("#s01").text("8자리 이상 입력이 필요합니다.")
+        //         $("#id").val("");
+        //         $("#id").focus();
+        //     }
+        // });
 
-            // $("#btn").click(function(){
-            //     if (($("#id").val().length)>=8) {
-            //         $(alert("정상입니다."));
-            //         $("#s01").text("");
-            //     } else {
-            //         $("#s01").text("8자리 이상 입력이 필요합니다.")
-            //         $("#id").val("");
-            //         $("#id").focus();
-            //     }
-            // });
+        $('#id').keyup(function () {
+          $('#id2').val($(this).val()); // 아래 칸에 카피
+          // $("#s02").text($("#id").val().length); // 입력된 글자의 길이
 
-
-
-            $("#id").keyup(function(){
-                $("#id2").val($(this).val()); // 아래 칸에 카피
-                // $("#s02").text($("#id").val().length); // 입력된 글자의 길이
-
-                if (($("#id").val().length)<8) {
-                    $("#s02").text("8자리 이상 입력이 필요합니다.");
-
-                } else {
-                    $("#s02").text(($("#id").val().length)+"글자").css("color","black");
-                } ;
-
-            });
-
-            
-
-
-
-
-            
-
+          if ($('#id').val().length < 8) {
+            $('#s02').text('8자리 이상 입력이 필요합니다.');
+          } else {
+            $('#s02')
+              .text($('#id').val().length + '글자')
+              .css('color', 'black');
+          }
         });
-
-
+      });
     </script>
-
-</head>
-<body>
+  </head>
+  <body>
     <form>
-        <label>아이디 입력</label>
-        <input type="text" name="id" id="id" placeholder="8자리 이상">
-        <span id="s01"></span>
-        <input type="button" id="btn" value="CHECK">
-        <br><br>
+      <label>아이디 입력</label>
+      <input type="text" name="id" id="id" placeholder="8자리 이상" />
+      <span id="s01"></span>
+      <input type="button" id="btn" value="CHECK" />
+      <br /><br />
 
-        <label>아이디 체크</label>
-        <input type="text" name="id2" id="id2" placeholder="8자리 이상">
-        <span id="s02"></span>
-
-
-
+      <label>아이디 체크</label>
+      <input type="text" name="id2" id="id2" placeholder="8자리 이상" />
+      <span id="s02"></span>
     </form>
-
-</body>
+  </body>
 </html>

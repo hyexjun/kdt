@@ -1,56 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0125_03</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-
-
-    </style>
+    <style></style>
     <script>
+      $(function () {
+        $('#email_url').change(function () {
+          if ($(this).val()) {
+            $('#email02').removeAttr('readonly');
+            $('#email02').val($(this).val());
+          } else {
+          }
 
-        $(function () {
-
-            $("#email_url").change(function () {
-
-                if ($(this).val()) {
-                    $("#email02").removeAttr("readonly");
-                    $("#email02").val($(this).val());
-                } else {
-
-                }
-
-                // alert($("#email02").prop("readonly"));
-
-
-            });
-
-
+          // alert($("#email02").prop("readonly"));
         });
-
-
+      });
     </script>
+  </head>
 
-</head>
-
-<body>
-
-    <input type="text" name="email01" id="email01">@
-    <input type="text" name="email02" id="email02" readonly=true>
+  <body>
+    <input type="text" name="email01" id="email01" />@
+    <input type="text" name="email02" id="email02" readonly="true" />
     <select id="email_url">
-        <option value="">이메일을 선택해주세요.</option>
-        <option value="daum.net">daum.net</option>
-        <option value="naver.com">naver.com</option>
-        <option value="google.com">google.com</option>
-        <option value="" id="">직접 입력</option>
-
+      <option value="">이메일을 선택해주세요.</option>
+      <option value="daum.net">daum.net</option>
+      <option value="naver.com">naver.com</option>
+      <option value="google.com">google.com</option>
+      <option value="" id="">직접 입력</option>
     </select>
-
-
-</body>
-
+  </body>
 </html>

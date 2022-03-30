@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0126_01_popup</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-
-        input {margin: 5px auto; height: 18px;}
-
+      input {
+        margin: 5px auto;
+        height: 18px;
+      }
     </style>
     <script>
+      $(function () {
+        // j쿼리에서는 아이디#이지만 js에서는 # 안씀 헷갈리지말자..
+        alert(opener.document.getElementById('userId').value);
+        $('#setId').val(opener.document.getElementById('userId').value);
+      });
 
-        $(function(){   // j쿼리에서는 아이디#이지만 js에서는 # 안씀 헷갈리지말자..
-            alert(opener.document.getElementById("userId").value)
-            $("#setId").val(opener.document.getElementById("userId").value);
-        });
-
-
-        function sendParent(){
-            opener.document.getElementById("userName").value=$("#userName").val();
-            window.close();
-        }
-
-
+      function sendParent() {
+        opener.document.getElementById('userName').value = $('#userName').val();
+        window.close();
+      }
     </script>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- 부모창의 id를 자식창에 전달 / 자식창의 이름을 부모창에 전달 -->
     <h3>넵. 자식창입니다.</h3>
 
     <label>아이디 받앗슴다</label>
-    <input type="setId" name="setId" id="setId" readonly>
-    
+    <input type="setId" name="setId" id="setId" readonly />
+
     <label>이름</label>
-    <input type="userName" name="userName" id="userName">
-    <button type="button" id="sendParent" onclick="sendParent()">이름 전송</button><br>
-
-    
-    
-
-</body>
+    <input type="userName" name="userName" id="userName" />
+    <button type="button" id="sendParent" onclick="sendParent()">
+      이름 전송</button
+    ><br />
+  </body>
 </html>

@@ -1,162 +1,158 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0125_01</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 200px;
+        height: 20px;
+      }
+      input {
+        margin-bottom: 10px;
+        width: 200px;
+      }
+      #agree1,
+      #agree2 {
+        width: 30px;
+      }
 
-        table, th, td {border: 1px solid black; border-collapse: collapse;
-                        width: 200px; height: 20px;}
-        input {margin-bottom: 10px; width: 200px;}
-        #agree1,#agree2 {width: 30px;}
-
-        table {width: 100%; margin: 20px auto; text-align: center;}
-        th,td {width: 200px; height: 20px;}
-        label {width: 100px; display: inline-block;}
-
-
+      table {
+        width: 100%;
+        margin: 20px auto;
+        text-align: center;
+      }
+      th,
+      td {
+        width: 200px;
+        height: 20px;
+      }
+      label {
+        width: 100px;
+        display: inline-block;
+      }
     </style>
     <script>
-
-        let num=1;
-        $(function(){
-
-
-            let count=0;  // 중복확인버튼 클릭수를 변수 선언하고
-                $("#btn1").click(function(){
-                    count++;
-                    alert("중복 확인을 완료했습니다.")  // 사실 얘는 안 보여도 그만임..
-                })
-
-            
-            // let num=1;
-            let default_table=0;
-            $("#btn2").click(function(){
-
-
-                let plusdata="";  // 근데 이거 왜 밖에 있으면 누적으로 등록되냐..? 아 이해함 ㅇㅋ
-                // alert("테스트")
-                // num++; // 이게 여깄으니까 등록 시도 했는데 실패한 것까지 게시글 번호로 카운트함..
-                plusdata += "<tr>"
-                plusdata += "<td>"+num+"</td>"
-                plusdata += "<td>"+$("#title").val()+"</td>"
-                plusdata += "<td>"+$("#inputDate").val()+"</td>"
-                plusdata += "<td>"+$("#userId").val()+"</td>"
-                plusdata += "<td>"+"조회수 증가 멈춰!"+"</td>"
-                plusdata += "</tr>"
-
-                
-                // // 약관 동의 체크 안 돼있으면 강제 동의처리 해버리기
-                // $("input:checkbox[name=agree]").each(function() {
-                //     if (this.checked==true) {
-                //         alert("체크되어 있습니다.");
-                //         return false; // each만큼 alert 뜨는 거 짜증나서 잘라버린 것..
-                //     } else {
-                //         alert("필수 동의 약관을 확인해주세요.");
-                //         this.checked=true;
-                //         // 여기도 false로 알림 자르고 싶었는데 그러면 박스 체크가 개수만큼 안 돈다..
-                //     }
-                // });
-
-
-                // 강제 동의처리는 아니고 걍 동의 하라고 경고창 띄우기
-                if ($("input:checkbox[name=agree]:checked").length<2){
-                    alert("모든 약관 동의가 필요합니다.");
-                    return false;
-                    };
-
-
-
-                if (count > 0) {  // 중복확인버튼 클릭 한번이라도 했으면 표에 내용추가 ㄱㄱ
-
-                    if (default_table==0){
-                        num++;
-                        $("#inputData").html(plusdata);
-                        count=0;  // 이거 해줘야 다음 표 추가할 때도 중복버튼 클릭여부 체크 가능
-                    } else {
-                        num++;
-                        $("#inputData").prepend(plusdata);
-                        count=0;
-                        // 암튼 게시물 추가하고 중복버튼 0 안 만들면 표추가 때 제 구실을 못한다..
-                    }
-                default_table++;
-
-                } else {
-                    alert("중복 확인이 필요합니다.")
-                }
-
-
-                $("#title,#inputDate,#userId").val("");  // 인풋박스 다시 비워주기
-                // $(this).removeProp('checked');
-                // 체크박스 리셋 어케하는디!!!!!!!!!!
-
-                
-            });
-
-
-
-            // 네.. 네네.. 저 함수 두개 몰라요.. 네... 공부해야돼요..
-
-            function hitCount(num){
-            alert("호출된 게시글 번호 : "+num);
-            alert("조회수 : "+$("#"+num+" td:nth-child(5)").text());
-            $("#"+num+" td:nth-child(5)").text(Number($("#"+num+" td:nth-child(5)").text())+1);
-            }
-
-            function del(num){
-                alert("호출된 게시글 번호 : "+num);
-                $("#"+num).remove();
-            }
-
-
-
-
+      let num = 1;
+      $(function () {
+        let count = 0; // 중복확인버튼 클릭수를 변수 선언하고
+        $('#btn1').click(function () {
+          count++;
+          alert('중복 확인을 완료했습니다.'); // 사실 얘는 안 보여도 그만임..
         });
 
+        // let num=1;
+        let default_table = 0;
+        $('#btn2').click(function () {
+          let plusdata = ''; // 근데 이거 왜 밖에 있으면 누적으로 등록되냐..? 아 이해함 ㅇㅋ
+          // alert("테스트")
+          // num++; // 이게 여깄으니까 등록 시도 했는데 실패한 것까지 게시글 번호로 카운트함..
+          plusdata += '<tr>';
+          plusdata += '<td>' + num + '</td>';
+          plusdata += '<td>' + $('#title').val() + '</td>';
+          plusdata += '<td>' + $('#inputDate').val() + '</td>';
+          plusdata += '<td>' + $('#userId').val() + '</td>';
+          plusdata += '<td>' + '조회수 증가 멈춰!' + '</td>';
+          plusdata += '</tr>';
 
+          // // 약관 동의 체크 안 돼있으면 강제 동의처리 해버리기
+          // $("input:checkbox[name=agree]").each(function() {
+          //     if (this.checked==true) {
+          //         alert("체크되어 있습니다.");
+          //         return false; // each만큼 alert 뜨는 거 짜증나서 잘라버린 것..
+          //     } else {
+          //         alert("필수 동의 약관을 확인해주세요.");
+          //         this.checked=true;
+          //         // 여기도 false로 알림 자르고 싶었는데 그러면 박스 체크가 개수만큼 안 돈다..
+          //     }
+          // });
+
+          // 강제 동의처리는 아니고 걍 동의 하라고 경고창 띄우기
+          if ($('input:checkbox[name=agree]:checked').length < 2) {
+            alert('모든 약관 동의가 필요합니다.');
+            return false;
+          }
+
+          if (count > 0) {
+            // 중복확인버튼 클릭 한번이라도 했으면 표에 내용추가 ㄱㄱ
+
+            if (default_table == 0) {
+              num++;
+              $('#inputData').html(plusdata);
+              count = 0; // 이거 해줘야 다음 표 추가할 때도 중복버튼 클릭여부 체크 가능
+            } else {
+              num++;
+              $('#inputData').prepend(plusdata);
+              count = 0;
+              // 암튼 게시물 추가하고 중복버튼 0 안 만들면 표추가 때 제 구실을 못한다..
+            }
+            default_table++;
+          } else {
+            alert('중복 확인이 필요합니다.');
+          }
+
+          $('#title,#inputDate,#userId').val(''); // 인풋박스 다시 비워주기
+          // $(this).removeProp('checked');
+          // 체크박스 리셋 어케하는디!!!!!!!!!!
+        });
+
+        // 네.. 네네.. 저 함수 두개 몰라요.. 네... 공부해야돼요..
+
+        function hitCount(num) {
+          alert('호출된 게시글 번호 : ' + num);
+          alert('조회수 : ' + $('#' + num + ' td:nth-child(5)').text());
+          $('#' + num + ' td:nth-child(5)').text(
+            Number($('#' + num + ' td:nth-child(5)').text()) + 1
+          );
+        }
+
+        function del(num) {
+          alert('호출된 게시글 번호 : ' + num);
+          $('#' + num).remove();
+        }
+      });
     </script>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <form>
-        <label>아이디</label>
-        <input type="text" name="userId" id="userId">
-        <button type="button" id="btn1">중복 확인</button>
-        <br>
-        <label>제목</label>
-        <input type="text" name="title" id="title">
-        <label>[필수] 약관 1</label>
-        <input type="checkbox" name="agree" id="agree1">
-        <label>[필수] 약관 2</label>
-        <input type="checkbox" name="agree" id="agree2">
-        <br>
-        <label>일자</label>
-        <input type="date" name="inputDate" id="inputDate">
-        <button type="button" id="btn2">게시물 등록</button>
+      <label>아이디</label>
+      <input type="text" name="userId" id="userId" />
+      <button type="button" id="btn1">중복 확인</button>
+      <br />
+      <label>제목</label>
+      <input type="text" name="title" id="title" />
+      <label>[필수] 약관 1</label>
+      <input type="checkbox" name="agree" id="agree1" />
+      <label>[필수] 약관 2</label>
+      <input type="checkbox" name="agree" id="agree2" />
+      <br />
+      <label>일자</label>
+      <input type="date" name="inputDate" id="inputDate" />
+      <button type="button" id="btn2">게시물 등록</button>
     </form>
-    
+
     <table>
-        <thead>
-            <tr>
-                <td>번호</td>
-                <td>제목</td>
-                <td>날짜</td>
-                <td>작성자</td>
-                <td>조회수</td>
-            </tr>
-        </thead>
-        <tbody id="inputData">
-            <tr>
-                <td colspan="5">등록된 데이터가 없습니다.</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <td>번호</td>
+          <td>제목</td>
+          <td>날짜</td>
+          <td>작성자</td>
+          <td>조회수</td>
+        </tr>
+      </thead>
+      <tbody id="inputData">
+        <tr>
+          <td colspan="5">등록된 데이터가 없습니다.</td>
+        </tr>
+      </tbody>
     </table>
-
-    
-
-</body>
+  </body>
 </html>

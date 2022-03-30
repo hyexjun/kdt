@@ -1,76 +1,89 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        * { margin: 0; padding: 0;
-            text-align: center; }
-        table, tr, td { margin: 0 auto;
-                        border: 1px solid black;
-                        border-collapse: collapse; }
-        #plus { color: red; font-weight: 600; }
-        #mulit { color: blue; font-weight: 600; }
+      * {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      table,
+      tr,
+      td {
+        margin: 0 auto;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      #plus {
+        color: red;
+        font-weight: 600;
+      }
+      #mulit {
+        color: blue;
+        font-weight: 600;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h2>당신이 좋아하는 숫자</h2>
     <table>
-        <script>
-            var str1 = prompt('당신이 좋아하는 숫자 1를 입력하세요.');
-            var str2 = prompt('당신이 좋아하는 숫자 2를 입력하세요.');
+      <script>
+        var str1 = prompt('당신이 좋아하는 숫자 1를 입력하세요.');
+        var str2 = prompt('당신이 좋아하는 숫자 2를 입력하세요.');
 
-            var num1 = Number(str1);
-            var num2 = Number(str2);
-        </script>
-        <tr>
-            <td>NUM1</td>
-            <td>
-                <script>
-                    document.write(num1)
-                </script>
-            </td>
-        </tr>
-        <tr>
-            <td>NUM2</td>
-            <td>
-                <script>
-                    document.write(num2)
-                </script>
-            </td>
-        </tr>
-        <tr>
-            <td>더하기</td>
-            <td id="plus">
-                <script>
-                    document.write(num1+num2)
-                </script>
-            </td>
-        </tr>
-        <tr>
-            <td>곱하기</td>
-            <td id="mulit">
-                <script>
-                    document.write(num1*num2)
-                </script>
-            </td>
-        </tr>
-        <tr>
-            <td>비교</td>
-            <td>
-                <script>
-                    if (num1>num2) {
-                    document.write(num1,"이 더 큽니다.");
-                    } else if (num1<num2) {
-                    document.write(num2,"이 더 큽니다.");
-                    } else {
-                    document.write("두 수가 같습니다.");
-                    }
-                </script>
-            </td>
-        </tr>
+        var num1 = Number(str1);
+        var num2 = Number(str2);
+      </script>
+      <tr>
+        <td>NUM1</td>
+        <td>
+          <script>
+            document.write(num1);
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>NUM2</td>
+        <td>
+          <script>
+            document.write(num2);
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>더하기</td>
+        <td id="plus">
+          <script>
+            document.write(num1 + num2);
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>곱하기</td>
+        <td id="mulit">
+          <script>
+            document.write(num1 * num2);
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>비교</td>
+        <td>
+          <script>
+            if (num1 > num2) {
+              document.write(num1, '이 더 큽니다.');
+            } else if (num1 < num2) {
+              document.write(num2, '이 더 큽니다.');
+            } else {
+              document.write('두 수가 같습니다.');
+            }
+          </script>
+        </td>
+      </tr>
     </table>
-</body>
+  </body>
 </html>

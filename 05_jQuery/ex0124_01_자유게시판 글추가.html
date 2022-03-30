@@ -1,133 +1,144 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0124_01</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        table, th, td {border: 1px solid black; border-collapse: collapse;
-                        width: 200px; height: 20px;}
-        input {margin-bottom: 10px; width: 30%;}
-        table {width: 100%; margin: 30px auto; text-align: center;}
-        th,td {width: 200px; height: 20px;}
-        label {width: 80px; display: inline-block;}
-        textarea {width: 80%; height: 400px; vertical-align: top;}
-        #btn2 {float: right;}
-
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 200px;
+        height: 20px;
+      }
+      input {
+        margin-bottom: 10px;
+        width: 30%;
+      }
+      table {
+        width: 100%;
+        margin: 30px auto;
+        text-align: center;
+      }
+      th,
+      td {
+        width: 200px;
+        height: 20px;
+      }
+      label {
+        width: 80px;
+        display: inline-block;
+      }
+      textarea {
+        width: 80%;
+        height: 400px;
+        vertical-align: top;
+      }
+      #btn2 {
+        float: right;
+      }
     </style>
     <script>
+      $(function () {
+        // 요기 아래는 jQuery로 짠 내용들
 
-        $(function(){     // 요기 아래는 jQuery로 짠 내용들
+        let defaultCon = 0; // 이후 tbody에 디폴트 내용을 삭제 후 게시하기 위한 변수 선언
+        let num = 0; // 조회수 num은 0부터 시작이지만 -> 27번줄로 이어서
+        $('#btn').click(function () {
+          // 버튼1 게시물 등록을 클릭하면 작동하는 함수 정의
 
+          num++; // 클릭함과 동시에 1 추가로 시작한다..
 
-            let defaultCon=0;    // 이후 tbody에 디폴트 내용을 삭제 후 게시하기 위한 변수 선언 
-            let num=0;    // 조회수 num은 0부터 시작이지만 -> 27번줄로 이어서
-            $("#btn").click(function (){   // 버튼1 게시물 등록을 클릭하면 작동하는 함수 정의
+          let plusdata = ''; // 첨에 plusdata는 빈값으로 시작해서 아래 추가 예정
+          let ranNum = Math.round(Math.random() * 10);
 
-                num++;    // 클릭함과 동시에 1 추가로 시작한다..
-                
-                let plusdata="";  // 첨에 plusdata는 빈값으로 시작해서 아래 추가 예정
-                let ranNum=Math.round((Math.random()*10));
+          if ($.trim($('#title').val()) == '') {
+            alert('제목을 입력하셔야 등록이 가능합니다.');
+            $('#title').focus();
+            return false;
+          }
 
-                if ($.trim($("#title").val())=="") {
-                    alert("제목을 입력하셔야 등록이 가능합니다.");
-                    $("#title").focus();
-                    return false;
-                }
-                            
-                plusdata += "<tr>";
-                plusdata += "<td>"+num+"</td>"; // 걍 num 하면 되는데 text(num)하고 난리났다^^
-                plusdata += "<td>"+$("#title").val()+"</td>"; // 인풋 저시기의 value를 넣어주겠다
-                plusdata += "<td>"+$("#u_id").val()+"</td>";  // 이하 동문이다
-                plusdata += "<td>"+$("#c_date").val()+"</td>";
-                plusdata += "<td>"+ranNum+"</td>"; // 조회수는 일단 그냥 위에서 난수로 걍 임의지정함
-                plusdata += "</tr>";
+          plusdata += '<tr>';
+          plusdata += '<td>' + num + '</td>'; // 걍 num 하면 되는데 text(num)하고 난리났다^^
+          plusdata += '<td>' + $('#title').val() + '</td>'; // 인풋 저시기의 value를 넣어주겠다
+          plusdata += '<td>' + $('#u_id').val() + '</td>'; // 이하 동문이다
+          plusdata += '<td>' + $('#c_date').val() + '</td>';
+          plusdata += '<td>' + ranNum + '</td>'; // 조회수는 일단 그냥 위에서 난수로 걍 임의지정함
+          plusdata += '</tr>';
 
-                // plusdata += "<tr>"
-                // plusdata += "<td>"+$("#contents").val()+"</td>"
-                // plusdata += "</tr>"
+          // plusdata += "<tr>"
+          // plusdata += "<td>"+$("#contents").val()+"</td>"
+          // plusdata += "</tr>"
 
-                if (defaultCon==0){
-                    $("#a_contents").html(plusdata);     // #tbody 내 모든 html 삭제후 추가
-                } else {
-                    $("#a_contents").prepend(plusdata);  // #tbody html 상위에 추가
-                }
-                defaultCon++;
+          if (defaultCon == 0) {
+            $('#a_contents').html(plusdata); // #tbody 내 모든 html 삭제후 추가
+          } else {
+            $('#a_contents').prepend(plusdata); // #tbody html 상위에 추가
+          }
+          defaultCon++;
 
-                $("#title,#u_id,#contents,#c_date").val(""); // tbody에 내용추가 후, 인풋박스 공란으로 초기화하기
-                alert("게시글이 추가되었습니다.");
-
-            });
-
-
-
-
+          $('#title,#u_id,#contents,#c_date').val(''); // tbody에 내용추가 후, 인풋박스 공란으로 초기화하기
+          alert('게시글이 추가되었습니다.');
         });
+      });
 
+      function hitCount(cnt) {
+        // 여기 cnt는 다른 곳의 지정 변수와 상관 없는 파라미터 cnt!! 헷갈리지 말것.
+        alert('호출된 번호 : ' + cnt);
+        alert('조회수 값 : ' + $('#' + cnt).text());
+        $('#' + cnt).text(Number($('#' + cnt).text()) + 1);
+      }
 
-
-        function hitCount(cnt){   // 여기 cnt는 다른 곳의 지정 변수와 상관 없는 파라미터 cnt!! 헷갈리지 말것.
-            alert("호출된 번호 : "+cnt);
-            alert("조회수 값 : "+$("#"+cnt).text());
-            $("#"+cnt).text(Number($("#"+cnt).text())+1);
-        };
-
-        // 위 JS 함수로 조회수 추가 기능 작동시킬 때는 44번줄 수정 필요
-        // plusdata += "<td id='"+cnt+"' onclick='hitCount("+cnt+")'>1</td>"; 
-
-            
-
+      // 위 JS 함수로 조회수 추가 기능 작동시킬 때는 44번줄 수정 필요
+      // plusdata += "<td id='"+cnt+"' onclick='hitCount("+cnt+")'>1</td>";
     </script>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <h3>자유게시판</h3>
     <form>
-        <!-- <label>번호</label>
+      <!-- <label>번호</label>
         <input type="text" name="num" id="num"><br> -->
-        <label>제목</label>
-        <input type="text" name="title" id="title"><br>
-        <label>작성자</label>
-        <input type="text" name="u_id" id="u_id"><br>
-        <label>내용</label>
-        <textarea name="contents" id="contents"></textarea><br><br>
-        <label>날짜</label>
-        <input type="date" name="c_cate" id="c_date">
+      <label>제목</label>
+      <input type="text" name="title" id="title" /><br />
+      <label>작성자</label>
+      <input type="text" name="u_id" id="u_id" /><br />
+      <label>내용</label>
+      <textarea name="contents" id="contents"></textarea><br /><br />
+      <label>날짜</label>
+      <input type="date" name="c_cate" id="c_date" />
 
-        <button type=button id="btn">게시물 등록</button>
+      <button type="button" id="btn">게시물 등록</button>
     </form>
-    <br><br>
+    <br /><br />
 
-    <button type=button id="btn2">게시물 삭제</button>
+    <button type="button" id="btn2">게시물 삭제</button>
     <table>
-        <thead>
-            <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>날짜</th>
-                <th>조회수</th>
-            </tr>
-        </thead>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>날짜</th>
+          <th>조회수</th>
+        </tr>
+      </thead>
 
-        <tbody id="a_contents">
-            <!-- <tr>
+      <tbody id="a_contents">
+        <!-- <tr>
                 <td>1</td>
                 <td>게시글 제목</td>
                 <td>hongUser</td>
                 <td>2022-01-24</td>
                 <td>3</td>
             </tr> -->
-            <tr>
-                <td colspan="5">내용이 없습니다.</td>
-            </tr>
-        </tbody>
+        <tr>
+          <td colspan="5">내용이 없습니다.</td>
+        </tr>
+      </tbody>
     </table>
-
-    
-
-</body>
+  </body>
 </html>

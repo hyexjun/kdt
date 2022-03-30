@@ -1,49 +1,39 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0121_02</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(function(){
-            
-            // $("#title").css("color","red");
-            // $("#btn").on("click",function(){
-            // // #btn에 적용할 것임. 켠다, 클릭해서, 기능함수를.
-            //     $("#p01").css("color","blue");
-            //     // 작동하는 기능함수. p01에 적용, css관련, color를 블루로.   
-            //     $("#p01").css("font-size","20px");
-            // });
+      $(function () {
+        // $("#title").css("color","red");
+        // $("#btn").on("click",function(){
+        // // #btn에 적용할 것임. 켠다, 클릭해서, 기능함수를.
+        //     $("#p01").css("color","blue");
+        //     // 작동하는 기능함수. p01에 적용, css관련, color를 블루로.
+        //     $("#p01").css("font-size","20px");
+        // });
 
+        // $("#li02").on("click",function(){
+        //     $("#li02").css("color","red");
+        // }); // 다음 클릭하면 다음이 빨간색이 되도록.
 
-
-            // $("#li02").on("click",function(){
-            //     $("#li02").css("color","red");
-            // }); // 다음 클릭하면 다음이 빨간색이 되도록.
-
-
-
-            
-            $("#colorChange").on("click",function(){
-                // $(".li").css({"color":"red","font-size":"20px"});
-                $(".li").css("color","red").css("font-size","20px");
-                // 같은 결과!
-            });
-
-
-            
+        $('#colorChange').on('click', function () {
+          // $(".li").css({"color":"red","font-size":"20px"});
+          $('.li').css('color', 'red').css('font-size', '20px');
+          // 같은 결과!
         });
+      });
     </script>
     <style>
-         /* h1 { color: rosybrown; font-size: 20px } */
-        /* #p01 { color: royalblue; }
+      /* h1 { color: rosybrown; font-size: 20px } */
+      /* #p01 { color: royalblue; }
         .c01 { border: 1px solid black; width: 300px; height: 200px; } */
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- <h1 id="title">제목</h1> 선택자 = 뭔가를 적용할 대상 -->
     <!-- <p id="p01">글이 들어갑니다.</p>
     <div class="c01">박스모델을 의미합니다.</div><br>
@@ -54,8 +44,6 @@
         // 근데 j쿼리는 클래스든 아이디든 되고 문장도 간단함.
     </script> -->
 
-
-
     <!-- <ul>
         <li>네이버</li>
         <li id="li02">다음</li>
@@ -63,15 +51,12 @@
         <li>구글</li>
     </ul> -->
 
-
-
     <ul>
-        <li class="li">네이버</li>
-        <li>다음</li>
-        <li class="li">네이트</li>
-        <li>구글</li>
+      <li class="li">네이버</li>
+      <li>다음</li>
+      <li class="li">네이트</li>
+      <li>구글</li>
     </ul>
-    <button id=colorChange>색변경</button>
-
-</body>
+    <button id="colorChange">색변경</button>
+  </body>
 </html>

@@ -38,12 +38,12 @@ textarea {
 .category-wrapper {
   width: 100%;
   border: 2px solid #ccc;
-
 }
 
 select {
   padding: 5px 0px 5px 10px;
-  background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png) no-repeat 98% 50%;
+  background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png)
+    no-repeat 98% 50%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

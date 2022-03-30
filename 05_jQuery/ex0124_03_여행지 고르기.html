@@ -1,79 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0124_03</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-
-
-    </style>
+    <style></style>
     <script>
+      $(function () {
+        $('#btn').click(function () {
+          if ($('input:checkbox[name=tour]:checked').length >= 3) {
+            // alert($("input:checkbox[name=tour]:checked").val()); // 이거 안된다!!!!
 
-        $(function(){
-            $("#btn").click(function(){
-                if ($("input:checkbox[name=tour]:checked").length >= 3){
-                    // alert($("input:checkbox[name=tour]:checked").val()); // 이거 안된다!!!!
+            $('input:checkbox[name=tour]:checked').each(function () {
+              alert($(this).attr('value'));
+            }); // 선생님 이렇게 팝업 각자 뜨는거 말고요..ㅠㅠ 한방에 뜨고싶어..
 
-                    $("input:checkbox[name=tour]:checked").each(function(){
-                        alert($(this).attr("value"));
-                    })  // 선생님 이렇게 팝업 각자 뜨는거 말고요..ㅠㅠ 한방에 뜨고싶어..
-
-                    // alert(s_List+"를 선택하였습니다.")
-                } else {
-                    alert("3개 이상 선택이 필요합니다.");
-                    return false;
-                    
-                }
-
-            });
-
-
-
-            // 저의 슬픈 츄라이...  24번줄과 함께 짝꿍입니다....
-            let s_List="";
-            let c_Tour=$("input:checkbox[name=tour]:checked").val();
-            let all_Tour=$("input:checkbox[name=tour]").length;
-
-                $("input:checkbox[name=tour]").each(function(){
-                s_List += c_Tour;
-                
-                });
-
-
-
-                        
-
+            // alert(s_List+"를 선택하였습니다.")
+          } else {
+            alert('3개 이상 선택이 필요합니다.');
+            return false;
+          }
         });
 
+        // 저의 슬픈 츄라이...  24번줄과 함께 짝꿍입니다....
+        let s_List = '';
+        let c_Tour = $('input:checkbox[name=tour]:checked').val();
+        let all_Tour = $('input:checkbox[name=tour]').length;
 
+        $('input:checkbox[name=tour]').each(function () {
+          s_List += c_Tour;
+        });
+      });
     </script>
-
-</head>
-<body>
-
-    <h3>여행지</h3> <!--여행 선택지 3개 이상 고르고 버튼 눌러야 네이버 이동-->
+  </head>
+  <body>
+    <h3>여행지</h3>
+    <!--여행 선택지 3개 이상 고르고 버튼 눌러야 네이버 이동-->
     <form action="http://www.naver.com" method="get">
-
-        <label>여행지를 선택해주세요.</label><br><br>
-        <input type="checkbox" name="tour" id="t01" value="영국">
-        <label for="t01">영국</label>
-        <input type="checkbox" name="tour" id="t02" value="프랑스">
-        <label for="t02">프랑스</label>
-        <input type="checkbox" name="tour" id="t03" value="독일">
-        <label for="t03">독일</label>
-        <input type="checkbox" name="tour" id="t04" value="이탈리아">
-        <label for="t04">이탈리아</label>
-        <input type="checkbox" name="tour" id="t05" value="중국">
-        <label for="t05">중국</label><br><br>
-        <button type="submit" id="btn">가보자고</button>
-
+      <label>여행지를 선택해주세요.</label><br /><br />
+      <input type="checkbox" name="tour" id="t01" value="영국" />
+      <label for="t01">영국</label>
+      <input type="checkbox" name="tour" id="t02" value="프랑스" />
+      <label for="t02">프랑스</label>
+      <input type="checkbox" name="tour" id="t03" value="독일" />
+      <label for="t03">독일</label>
+      <input type="checkbox" name="tour" id="t04" value="이탈리아" />
+      <label for="t04">이탈리아</label>
+      <input type="checkbox" name="tour" id="t05" value="중국" />
+      <label for="t05">중국</label><br /><br />
+      <button type="submit" id="btn">가보자고</button>
     </form>
-    
-
-    
-
-</body>
+  </body>
 </html>

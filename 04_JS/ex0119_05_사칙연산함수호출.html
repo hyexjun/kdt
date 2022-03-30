@@ -1,74 +1,77 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        table, th, td { border: 1px solid black;
-                        border-collapse: collapse;
-                        text-align: center;
-                        width: 200px; }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        width: 200px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <form action="">
-        <label for="">숫자 1 입력</label>
-        <input type="text" name="num1" id="num1"><br>
-        <label for="">숫자 2 입력</label>
-        <input type="text" name="num2" id="num2"><br>
-        <br>
-        <button type="button" onclick="cal_table()">얍</button>
+      <label for="">숫자 1 입력</label>
+      <input type="text" name="num1" id="num1" /><br />
+      <label for="">숫자 2 입력</label>
+      <input type="text" name="num2" id="num2" /><br />
+      <br />
+      <button type="button" onclick="cal_table()">얍</button>
     </form>
-    <br>
+    <br />
     <table>
-        <tr>
-            <td>더하기</td>
-            <td id="plus"></td>
-        </tr>
-        <tr>
-            <td>빼기</td>
-            <td id="minus"></td>
-        </tr>
-        <tr>
-            <td>곱하기</td>
-            <td id="multi"></td>
-        </tr>
-        <tr>
-            <td>나누기</td>
-            <td id="divide"></td>
-        </tr>
+      <tr>
+        <td>더하기</td>
+        <td id="plus"></td>
+      </tr>
+      <tr>
+        <td>빼기</td>
+        <td id="minus"></td>
+      </tr>
+      <tr>
+        <td>곱하기</td>
+        <td id="multi"></td>
+      </tr>
+      <tr>
+        <td>나누기</td>
+        <td id="divide"></td>
+      </tr>
     </table>
     <script>
-
-        function cal(num1, num2) {
+      function cal(num1, num2) {
         // var num1 = Number(document.getElementById("num1").value);
         // var num2 = Number(document.getElementById("num2").value);
         // ㄴ이거 이 함수 내에서는 불필요한 이유 : 함수명 옆 파라미터로 이미 명명해주었기 땜시
-        
-            var result1 = [];
-            result1[0] = num1+num2
-            result1[1] = num1-num2
-            result1[2] = num1*num2
-            result1[3] = num1/num2
-            return result1;   // Q1. return이 없으면 왜 안 되는가?? 
-        }
 
-        function cal_table() {
-            var result1 = []; // Q2. 위 함수의 result1=[]; 선언과 다른 객체?인건 알겠음
-            var num1 = Number(document.getElementById("num1").value);
-            var num2 = Number(document.getElementById("num2").value);
-            var result1 = cal(num1, num2) // 근데 이 줄에서 var 선언이 있고 없고의 차이?
-                                          // 해보니까 var 있든 없든 정상작동은 됨..
+        var result1 = [];
+        result1[0] = num1 + num2;
+        result1[1] = num1 - num2;
+        result1[2] = num1 * num2;
+        result1[3] = num1 / num2;
+        return result1; // Q1. return이 없으면 왜 안 되는가??
+      }
 
-            document.getElementById("plus").innerText=result1[0]
-            document.getElementById("minus").innerText=result1[1]
-            document.getElementById("multi").innerText=result1[2]
-            document.getElementById("divide").innerText=result1[3]
+      function cal_table() {
+        var result1 = []; // Q2. 위 함수의 result1=[]; 선언과 다른 객체?인건 알겠음
+        var num1 = Number(document.getElementById('num1').value);
+        var num2 = Number(document.getElementById('num2').value);
+        var result1 = cal(num1, num2); // 근데 이 줄에서 var 선언이 있고 없고의 차이?
+        // 해보니까 var 있든 없든 정상작동은 됨..
 
-            // Q3. 왜 여긴 return이 없는데도 되는가?
-        }
+        document.getElementById('plus').innerText = result1[0];
+        document.getElementById('minus').innerText = result1[1];
+        document.getElementById('multi').innerText = result1[2];
+        document.getElementById('divide').innerText = result1[3];
+
+        // Q3. 왜 여긴 return이 없는데도 되는가?
+      }
     </script>
-</body>
+  </body>
 </html>

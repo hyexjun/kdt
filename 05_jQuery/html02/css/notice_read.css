@@ -46,7 +46,8 @@ nav div {
 }
 
 .logo {
-  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png) no-repeat -310px -375px;
+  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png)
+    no-repeat -310px -375px;
   background-size: 800px 800px;
 
   width: 110px;
@@ -81,7 +82,8 @@ nav li {
   width: 45px;
   height: 30px;
 
-  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png) no-repeat -584px -320px;
+  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png)
+    no-repeat -584px -320px;
   background-size: 800px 800px;
 }
 
@@ -91,7 +93,8 @@ nav li {
   width: 45px;
   height: 30px;
 
-  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png) no-repeat -624px -320px;
+  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png)
+    no-repeat -624px -320px;
   background-size: 800px 800px;
 }
 
@@ -200,7 +203,8 @@ footer > div {
 .footer-logo {
   position: relative;
   top: -170px;
-  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png) no-repeat -310px -310px;
+  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png)
+    no-repeat -310px -310px;
   background-size: 800px 800px;
 
   width: 170px;
@@ -277,7 +281,8 @@ footer > div {
 
   margin-bottom: 25px;
 
-  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png) no-repeat -635px 0px;
+  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png)
+    no-repeat -635px 0px;
   background-size: 800px 800px;
 
   transform: rotate(90deg);

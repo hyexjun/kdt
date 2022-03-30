@@ -39,7 +39,8 @@ header span {
   height: 600px;
   margin: 150px auto 0 auto;
 
-  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/image/bg_LoginBox.png) no-repeat;
+  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/image/bg_LoginBox.png)
+    no-repeat;
 }
 
 #loginBox {
@@ -68,11 +69,13 @@ input:hover {
 }
 
 #id {
-  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/image/bg_user.gif) 96% 48% no-repeat;
+  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/image/bg_user.gif)
+    96% 48% no-repeat;
 }
 
 #pw {
-  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/image/bg_pw.gif) 96% 48% no-repeat;
+  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/image/bg_pw.gif)
+    96% 48% no-repeat;
 }
 
 button {
@@ -81,7 +84,8 @@ button {
   margin-left: 12px;
   border: 1px #90261b solid;
 
-  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/image/btn_login.png) no-repeat;
+  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/image/btn_login.png)
+    no-repeat;
   color: white;
   font-size: 16px;
   font-weight: bold;

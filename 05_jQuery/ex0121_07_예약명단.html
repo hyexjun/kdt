@@ -1,92 +1,78 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0121_07</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        table, td {border: 1px solid black;
-                   border-collapse: collapse;
-                   width: 200px; height: 30px;
-                   text-align: center;}
+      table,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+      }
     </style>
     <script>
+      $(function () {
+        // $("#btn").click(function(){
+        //     // $("h1").css("color","red");
+        //     // $("#h01").css("color","red");
 
-        $(function(){
+        //     $("h1,#h01").css("color","red");
+        // });
 
-            // $("#btn").click(function(){
-            //     // $("h1").css("color","red");
-            //     // $("#h01").css("color","red");
+        // 둘다 입력되지 않으면, alert 모두 입력하셔야합니다. 후 빈곳에 focus로 이동.
+        // 모든 내용이 다 입력되어가 있으면 그때  최종예약확인에 표시
 
-            //     $("h1,#h01").css("color","red");
-            // });
-
-
-
-    // 둘다 입력되지 않으면, alert 모두 입력하셔야합니다. 후 빈곳에 focus로 이동.
-    // 모든 내용이 다 입력되어가 있으면 그때  최종예약확인에 표시
-
-            $("#btn").click(function(){
-                if (($("#csBook").val())=="" || ($("#locat").val())=="") {
-                    $(alert("나머지 항목을 채워주십시오."));
-                    $("locat").focus();
-                } else {
-                    $("#csBook01").text($("#csBook").val());
-                    $("#locat01").text($("#locat").val());
-
-                }
-
-            }); 
-
-            $() (function() {
-
-            });
-
-
-
-
-
+        $('#btn').click(function () {
+          if ($('#csBook').val() == '' || $('#locat').val() == '') {
+            $(alert('나머지 항목을 채워주십시오.'));
+            $('locat').focus();
+          } else {
+            $('#csBook01').text($('#csBook').val());
+            $('#locat01').text($('#locat').val());
+          }
         });
 
-
+        $()(function () {});
+      });
     </script>
-
-</head>
-<body>
+  </head>
+  <body>
     <!-- <h1>jquery</h1>
     <h2>선택자</h2>
     <h3 id="h01">아이디 선택자</h3>
     <h4>인접 선택자</h4>
     <input type="button" id="btn" value="색상 변경"/> -->
 
-
-
     <form>
-        <h3>아래 사항을 모두 입력하셔야 예약이 가능합니다.</h3>
-        <label>예약자명</label>
-        <input type="text" name="csBook" id="csBook"><span id="s01"></span><br/>
+      <h3>아래 사항을 모두 입력하셔야 예약이 가능합니다.</h3>
+      <label>예약자명</label>
+      <input type="text" name="csBook" id="csBook" /><span id="s01"></span
+      ><br />
 
-        <label>예약장소</label>
-        <input type="text" name="locat" id="locat"><span id="s02"></span><br/>
+      <label>예약장소</label>
+      <input type="text" name="locat" id="locat" /><span id="s02"></span><br />
 
-        <br>
-        <input type="button" id="btn" value="확인하시겠습니까? CLICK">
+      <br />
+      <input type="button" id="btn" value="확인하시겠습니까? CLICK" />
 
-        <br><br>
-        <h2>예약 확정 명단</h2>
-        <table>
-            <tr>
-                <td>예약자명</td>
-                <td id="csBook01"></td>
-            </tr>
-            <tr>
-                <td>예약장소</td>
-                <td id="locat01"></td>
-            </tr>
-        </table>
-
+      <br /><br />
+      <h2>예약 확정 명단</h2>
+      <table>
+        <tr>
+          <td>예약자명</td>
+          <td id="csBook01"></td>
+        </tr>
+        <tr>
+          <td>예약장소</td>
+          <td id="locat01"></td>
+        </tr>
+      </table>
     </form>
-</body>
+  </body>
 </html>

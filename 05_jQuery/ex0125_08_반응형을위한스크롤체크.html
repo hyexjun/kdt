@@ -1,45 +1,39 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0125_08</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        body {width: 5000px; height: 5000px;}
-        #s01 {position: fixed; width: 200px; height: 200px;
-              border: 1px solid black;}
-
+      body {
+        width: 5000px;
+        height: 5000px;
+      }
+      #s01 {
+        position: fixed;
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+      }
     </style>
     <script>
+      $(function () {
+        $(window).scroll(function () {
+          let sc_top = $(this).scrollTop();
+          let sc_left = $(this).scrollLeft();
 
-        $(function () {
-
-            $(window).scroll(function (){
-
-                let sc_top=$(this).scrollTop();
-                let sc_left=$(this).scrollLeft();
-
-                $(".top").text(sc_top);
-                $(".left").text(sc_left);
-
-            });
-            
+          $('.top').text(sc_top);
+          $('.left').text(sc_left);
         });
-
-
+      });
     </script>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="s01">
-        <p>scrollTop : <span class="top"></span></p>
-        <p>scrollLeft : <span class="left"></span></p>
+      <p>scrollTop : <span class="top"></span></p>
+      <p>scrollLeft : <span class="left"></span></p>
     </div>
-
-    
-
-</body>
+  </body>
 </html>

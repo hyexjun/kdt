@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="" method="get">
-        <label for="">아이디</label>
-        <input type="text" name="id" id="id">
-        <br/>
-        <label for="">패스워드</label>
-        <input type="password" name="pw" id="pw">
-        <br/>
-        <button type="button" onclick="checkLogin()">확인</button>
-        <!--왜 버튼에서 타입버튼 안 쓰면 아래 포커스가 작동이 안 될까요?-->
-        <!-- <input type="button" value="확인" onclick="checkLogin()"> -->
+      <label for="">아이디</label>
+      <input type="text" name="id" id="id" />
+      <br />
+      <label for="">패스워드</label>
+      <input type="password" name="pw" id="pw" />
+      <br />
+      <button type="button" onclick="checkLogin()">확인</button>
+      <!--왜 버튼에서 타입버튼 안 쓰면 아래 포커스가 작동이 안 될까요?-->
+      <!-- <input type="button" value="확인" onclick="checkLogin()"> -->
     </form>
     <script>
-        function checkLogin() {
-            var id = document.getElementById("id").value;
-            var pw = document.getElementById("pw").value;
-            if((id=="admin") && (pw=="1111")) {
-                alert("로그인 성공!");
-                frm.submit();
-            }
-            else {
-                alert("아이디/패스워드를 확인하세요.");
-                document.getElementById("id").value=""; //틀리면 알림 후 값을 공백으로
-                document.getElementById("id").focus();
-            }
+      function checkLogin() {
+        var id = document.getElementById('id').value;
+        var pw = document.getElementById('pw').value;
+        if (id == 'admin' && pw == '1111') {
+          alert('로그인 성공!');
+          frm.submit();
+        } else {
+          alert('아이디/패스워드를 확인하세요.');
+          document.getElementById('id').value = ''; //틀리면 알림 후 값을 공백으로
+          document.getElementById('id').focus();
         }
+      }
 
+      // //첫번째 방법
+      // var userId = prompt("아이디를 입력하세요.");
+      // var userPw = prompt("비밀번호를 입력하세요.");
 
-        // //첫번째 방법
-        // var userId = prompt("아이디를 입력하세요.");
-        // var userPw = prompt("비밀번호를 입력하세요.");
-
-        // if(userId=="admin" && userPw=="1111") {
-        //     alert("로그인 성공!");
-        //     location.href="http://www.naver.com";
-        // } else {
-        //     alert("아이디와 패스워드가 일치하지 않습니다.");
-        //     location.reload();
-        // }
+      // if(userId=="admin" && userPw=="1111") {
+      //     alert("로그인 성공!");
+      //     location.href="http://www.naver.com";
+      // } else {
+      //     alert("아이디와 패스워드가 일치하지 않습니다.");
+      //     location.reload();
+      // }
     </script>
-</body>
+  </body>
 </html>

@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        table { border: 1px solid blue;
-                width: 200px; height: 50px; }
+      table {
+        border: 1px solid blue;
+        width: 200px;
+        height: 50px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <form action="">
-        <label for="">이것은 X</label>
-        <input type="text" name="str1" id="str1">
-        <br/>
-        <label for="">이것은 Y</label>
-        <input type="text" name="str2" id="str2">
-        <br/>
-        <button type="button" onclick="cal()">연산</button>
+      <label for="">이것은 X</label>
+      <input type="text" name="str1" id="str1" />
+      <br />
+      <label for="">이것은 Y</label>
+      <input type="text" name="str2" id="str2" />
+      <br />
+      <button type="button" onclick="cal()">연산</button>
     </form>
     <script>
-        // //while 1~100까지 중 3배수의 합
-        // var num=1
-        // var total=0
-        // while (num<=100) {
-        //     if (num%3==0) {
-        //     total += num
-        //     }
-        //     num += 1
-        // }
-        // document.write(total)
+      // //while 1~100까지 중 3배수의 합
+      // var num=1
+      // var total=0
+      // while (num<=100) {
+      //     if (num%3==0) {
+      //     total += num
+      //     }
+      //     num += 1
+      // }
+      // document.write(total)
 
-        function cal() {
+      function cal() {
         // 입력값 x, y를 받고 x부터 y까지의 합
-            var num1 = Number(document.getElementById("str1").value);
-            var num2 = Number(document.getElementById("str2").value);
-            var total=0
-            while (num1<=num2) {
-                total += num1
-                num1 += 1
-            }
-            document.getElementById("num3").innerText = total;
-            
+        var num1 = Number(document.getElementById('str1').value);
+        var num2 = Number(document.getElementById('str2').value);
+        var total = 0;
+        while (num1 <= num2) {
+          total += num1;
+          num1 += 1;
         }
-        document.write(total); //이거 왜 안돼
-        // total이 cal 함수 속의 로컬변수?이기 때문이다..
+        document.getElementById('num3').innerText = total;
+      }
+      document.write(total); //이거 왜 안돼
+      // total이 cal 함수 속의 로컬변수?이기 때문이다..
     </script>
     <table>
-        <tr>
-            <td id="num3"></td>
-        </tr>
+      <tr>
+        <td id="num3"></td>
+      </tr>
     </table>
-</body>
+  </body>
 </html>

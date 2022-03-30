@@ -1,68 +1,46 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0125_04</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-
-
-    </style>
+    <style></style>
     <script>
+      $(function () {
+        $('#product1').change(function () {
+          alert('재고 : ' + $('#product1 option:selected').attr('value'));
+          // 이런건.. 안외우고 어케 .. 외워야지..
 
-        $(function () {
+          let num = Number($('#product1 option:selected').attr('value'));
+          let data_html = '';
 
+          for (let i = 1; i <= num; i++) {
+            data_html +=
+              '<option value=' + $(this).val() + '>' + i + '</option>';
+          }
 
-            $("#product1").change(function () {
-
-                alert("재고 : " + $("#product1 option:selected").attr("value"));
-                // 이런건.. 안외우고 어케 .. 외워야지..
-
-                let num = Number($("#product1 option:selected").attr("value"));
-                let data_html = "";
-
-                for (let i = 1; i <= num; i++) {
-                    data_html += "<option value=" + $(this).val() + ">" + i + "</option>"
-                }
-
-                $("#product2").html(data_html);
-
-
-            });
-
-
-
-
+          $('#product2').html(data_html);
         });
-
-
+      });
     </script>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <label>사이즈</label>
     <select id="product1">
-        <option value="" id="">사이즈를 선택해주세요.</option>
-        <option value="4" id="4">240mm</option>
-        <option value="5" id="5">250mm</option>
-        <option value="6" id="6">260mm</option>
+      <option value="" id="">사이즈를 선택해주세요.</option>
+      <option value="4" id="4">240mm</option>
+      <option value="5" id="5">250mm</option>
+      <option value="6" id="6">260mm</option>
     </select>
     <label>주문 수량</label>
     <select id="product2">
-        <option value="">수량을 선택해주세요.</option>
-        <option value="240_7">7</option>
-        <option value="250_4">4</option>
-        <option value="260_5">5</option>
+      <option value="">수량을 선택해주세요.</option>
+      <option value="240_7">7</option>
+      <option value="250_4">4</option>
+      <option value="260_5">5</option>
     </select>
-
-
-
-
-</body>
-
+  </body>
 </html>

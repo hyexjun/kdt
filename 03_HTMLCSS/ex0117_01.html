@@ -1,53 +1,78 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        section p { color: blue; }
-        h1~ul { color: red; font-weight: 600; }
-        img[alt] { border: 5px solid black; }
-        label[for] { color: green; }
-        input[type="text"] { background: yellow; }
-        input:checked+label { color: blue; font-weight: 600; }
+      section p {
+        color: blue;
+      }
+      h1 ~ ul {
+        color: red;
+        font-weight: 600;
+      }
+      img[alt] {
+        border: 5px solid black;
+      }
+      label[for] {
+        color: green;
+      }
+      input[type='text'] {
+        background: yellow;
+      }
+      input:checked + label {
+        color: blue;
+        font-weight: 600;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <section>
-        <p>기업의 종류</p>
-        <div>
-            <p>인터넷 기업</p>
-        </div>
-        <div>
-            <ul>
-                <li>구글
-                    <p>구글은 미국의 기업입니다.</p>
-                </li>
-                <li>네이버</li>
-                <li>다음</li>
-            </ul>
-        </div>
+      <p>기업의 종류</p>
+      <div>
+        <p>인터넷 기업</p>
+      </div>
+      <div>
+        <ul>
+          <li>
+            구글
+            <p>구글은 미국의 기업입니다.</p>
+          </li>
+          <li>네이버</li>
+          <li>다음</li>
+        </ul>
+      </div>
     </section>
     <p>섹션 밖의 p 태그</p>
 
     <h1>예약 방법 및 요금</h1>
     <ul>
-        <li>문자 남기기</li>
-        <img src="../images/point_01.gif" alt="요금">
+      <li>문자 남기기</li>
+      <img src="../images/point_01.gif" alt="요금" />
     </ul>
 
     <form action="" method="get">
-        <label for="">아이디</label>
-        <input type="text" name="id" id="id"/><br/>
-        <label for="">취미</label><br/>
-        <label for="golf">골프</label>
-        <input type="checkbox" name="hobby" id="golf" value="golf"/><br/>
-        <label for="swimming">수영</label>
-        <input type="checkbox" name="hobby" id="swimming" value="swimming"/><br/>
-        <label for="readingabook">독서</label>
-        <input type="checkbox" name="hobby" id="readingabook" value="readingabook"/><br/>
+      <label for="">아이디</label>
+      <input type="text" name="id" id="id" /><br />
+      <label for="">취미</label><br />
+      <label for="golf">골프</label>
+      <input type="checkbox" name="hobby" id="golf" value="golf" /><br />
+      <label for="swimming">수영</label>
+      <input
+        type="checkbox"
+        name="hobby"
+        id="swimming"
+        value="swimming"
+      /><br />
+      <label for="readingabook">독서</label>
+      <input
+        type="checkbox"
+        name="hobby"
+        id="readingabook"
+        value="readingabook"
+      /><br />
     </form>
-</body>
+  </body>
 </html>

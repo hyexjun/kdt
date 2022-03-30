@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0120_0</title>
     <style>
-        div { width: 300px; height: 200px;
-              border: 1px solid black; }
+      div {
+        width: 300px;
+        height: 200px;
+        border: 1px solid black;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="d01">좋은 하루 보내세요.</div>
     <script>
-        // document.getElementById('d01').innerHTML='<h2>좋은 하루 보내세요.</h2>'
-        
-        let str = '1,90,40,30,80';
-        let str_arr = str.split(',');
-        let num_arr = str_arr.map(Number);
+      // document.getElementById('d01').innerHTML='<h2>좋은 하루 보내세요.</h2>'
 
-        console.log(str_arr);
-        console.log(num_arr);
+      let str = '1,90,40,30,80';
+      let str_arr = str.split(',');
+      let num_arr = str_arr.map(Number);
 
-        console.log(str_arr.sort());
-        console.log(str_arr.reverse());
+      console.log(str_arr);
+      console.log(num_arr);
 
-        console.log(str_arr.reverse()[0]);   // 인덱스 없이는 오름내림차순인데
-        console.log(str_arr.sort()[0]);      // 인덱스 있으면 아묻따 오름차순인가요?
+      console.log(str_arr.sort());
+      console.log(str_arr.reverse());
 
-        let maxNum = Math.max(num_arr);      // 기껏 인트로 바꿔놨는데 또 왜안돼!!!
-        console.log(maxNum);                 // 왜 또 NaN인가요!!!
+      console.log(str_arr.reverse()[0]); // 인덱스 없이는 오름내림차순인데
+      console.log(str_arr.sort()[0]); // 인덱스 있으면 아묻따 오름차순인가요?
 
+      let maxNum = Math.max(num_arr); // 기껏 인트로 바꿔놨는데 또 왜안돼!!!
+      console.log(maxNum); // 왜 또 NaN인가요!!!
     </script>
-</body>
+  </body>
 </html>

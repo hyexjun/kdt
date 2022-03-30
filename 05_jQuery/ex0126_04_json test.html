@@ -1,99 +1,98 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0126_04</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-
-        table,th,td {border: 1px solid black;
-                     border-collapse: collapse;
-                     text-align: center;}
-        th, td {height: 40px;}
-        th:nth-child(1) {width: 100px;}
-        th:nth-child(2) {width: 300px;}
-        th:nth-child(3) {width: 100px;}
-        th:nth-child(4) {width: 100px;}
-        th:nth-child(5) {width: 80px;}
-
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      th,
+      td {
+        height: 40px;
+      }
+      th:nth-child(1) {
+        width: 100px;
+      }
+      th:nth-child(2) {
+        width: 300px;
+      }
+      th:nth-child(3) {
+        width: 100px;
+      }
+      th:nth-child(4) {
+        width: 100px;
+      }
+      th:nth-child(5) {
+        width: 80px;
+      }
     </style>
     <script>
+      $(function () {
+        $.ajax({
+          // 이거는 (){} 아니고 ({})다..
+          url: 'MOCK_DATA.json', // 내가 보낼 주소. 어디다가 보낼 건지
+          type: 'get',
+          // data:{"boardNum":"5"},  // 이거 뭔 의미인지 모르겠음. 나중에 알려준대
+          dataType: 'json',
 
-        $(function () {
+          success: function (data) {
+            // 여기서 data는 파라미터라 이름 바꿔도 됨
+            alert('성공 ' + data[0].boardNum);
+            alert('성공 ' + data[0].title);
+            alert('성공 ' + data[0].date);
+            alert('성공 ' + data[0].id);
+            alert('성공 ' + data[0].hit);
 
-            $.ajax({    // 이거는 (){} 아니고 ({})다..
-                url:"MOCK_DATA.json",    // 내가 보낼 주소. 어디다가 보낼 건지
-                type:"get",
-                // data:{"boardNum":"5"},  // 이거 뭔 의미인지 모르겠음. 나중에 알려준대
-                dataType:"json",
-                
-                success:function(data){  // 여기서 data는 파라미터라 이름 바꿔도 됨
-                    alert("성공 "+data[0].boardNum);
-                    alert("성공 "+data[0].title);
-                    alert("성공 "+data[0].date);
-                    alert("성공 "+data[0].id);
-                    alert("성공 "+data[0].hit);
-               
-                    let data_html="";    // data를 1개의 파일로 변경 (??)
-                    for (let i in data) {
+            let data_html = ''; // data를 1개의 파일로 변경 (??)
+            for (let i in data) {
+              data_html += '<tr>';
+              data_html += '<td>' + data[i].boardNum + '</td>';
+              data_html += '<td>' + data[i].title + '</td>';
+              data_html += '<td>' + data[i].id + '</td>';
+              data_html += '<td>' + data[i].date + '</td>';
+              data_html += '<td>' + data[i].hit + '</td>';
+              data_html += '</tr>';
+            }
 
-                        data_html += "<tr>";
-                        data_html += "<td>"+data[i].boardNum+"</td>";
-                        data_html += "<td>"+data[i].title+"</td>";
-                        data_html += "<td>"+data[i].id+"</td>";
-                        data_html += "<td>"+data[i].date+"</td>";
-                        data_html += "<td>"+data[i].hit+"</td>";
-                        data_html += "</tr>";
+            $('#contents').html(data_html);
+          },
 
-                    }
-
-                    $("#contents").html(data_html);
-
-
-                },
-
-                error:function(){
-                    alert("실패");
-                }
-            });
-            
-
-
+          error: function () {
+            alert('실패');
+          },
         });
-
-
+      });
     </script>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <h2>회원리스트</h2>
     <table>
-        <thead>
-            <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>날짜</th>
-                <th>조회수</th>
-            </tr>
-        </thead>
-        <tbody id="contents">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-        
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>날짜</th>
+          <th>조회수</th>
+        </tr>
+      </thead>
+      <tbody id="contents">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
     </table>
-    
-
-    
-
-</body>
+  </body>
 </html>

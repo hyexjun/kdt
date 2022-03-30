@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="http://www.naver.com" method="get">
-        <label for="">당신의 나이는?</label>
-        <input type="text" name="age" id="age"><br/>
-        <button onclick="checkAge()">확인</button>
+      <label for="">당신의 나이는?</label>
+      <input type="text" name="age" id="age" /><br />
+      <button onclick="checkAge()">확인</button>
     </form>
     <script>
-        // var a = 7;
-        // var b = 3;
-        // var c = 9;
-        // var result = a>b?(a>c?a:c):b;
-        // document.write("삼항식 : ",result);
+      // var a = 7;
+      // var b = 3;
+      // var c = 9;
+      // var result = a>b?(a>c?a:c):b;
+      // document.write("삼항식 : ",result);
 
-        // var a = 20;
-        // // var age = prompt("당신의 나이는?")
-        // var b = "성인";
-        // var c = "미성년자";
-        // var result = age>a?(age<a?age:c):b;
-        // document.write(result);
+      // var a = 20;
+      // // var age = prompt("당신의 나이는?")
+      // var b = "성인";
+      // var c = "미성년자";
+      // var result = age>a?(age<a?age:c):b;
+      // document.write(result);
 
-        // var age = prompt("나이를 입력하세요.");
-        // var check1 = age>19?"성인입니다.":"미성년자입니다.";
-        // document.write(check1,"<br/>");
+      // var age = prompt("나이를 입력하세요.");
+      // var check1 = age>19?"성인입니다.":"미성년자입니다.";
+      // document.write(check1,"<br/>");
 
-        function checkAge() {
-            var age = document.getElementById("age").value; // 이 한줄.. 안 써서 안 된 거였음
-            if(age > 19) {alert("당신은 성인입니다.")}
-            else {alert("당신은 미성년자입니다.")}
+      function checkAge() {
+        var age = document.getElementById('age').value; // 이 한줄.. 안 써서 안 된 거였음
+        if (age > 19) {
+          alert('당신은 성인입니다.');
+        } else {
+          alert('당신은 미성년자입니다.');
         }
+      }
     </script>
-</body>
+  </body>
 </html>

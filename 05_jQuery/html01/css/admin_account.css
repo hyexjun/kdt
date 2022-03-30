@@ -56,7 +56,6 @@ table {
 
   background: #6a7176;
   height: 24px;
-
 }
 
 td {
@@ -118,17 +117,21 @@ nav > ul > li {
 }
 
 .nav1 {
-  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/menu/image/menuIcon.png) no-repeat 0 -34px;
+  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/menu/image/menuIcon.png)
+    no-repeat 0 -34px;
 }
 
 .nav2 {
-  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/menu/image/menuIcon.png) no-repeat 0 -51px;
+  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/menu/image/menuIcon.png)
+    no-repeat 0 -51px;
 }
 
 .nav3 {
-  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/menu/image/menuIcon.png) no-repeat;
+  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/menu/image/menuIcon.png)
+    no-repeat;
 }
 
 .nav4 {
-  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/menu/image/menuIcon.png) no-repeat 0 -85px;
+  background: url(http://lmsenterprise2019.itmap.co.kr/_admin/menu/image/menuIcon.png)
+    no-repeat 0 -85px;
 }

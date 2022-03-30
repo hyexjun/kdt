@@ -1,82 +1,60 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex012_0</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-
-
-    </style>
+    <style></style>
     <script>
+      $(function () {
+        $.ajax({
+          url: 'MOCK_DATA.json',
+          type: 'get',
+          // data:"",
+          dataType: 'json',
 
-        
-        $(function () {
+          success: function (data) {
+            alert('축하혀요');
 
+            let plusdata = ''; // data를 1개의 파일로 변경 (??)
+            for (let i in data) {
+              plusdata += '<tr>';
+              plusdata += '<td>' + data[i].boardNum + '</td>';
+              plusdata += '<td>' + data[i].title + '</td>';
+              plusdata += '<td>' + data[i].id + '</td>';
+              plusdata += '<td>' + data[i].date + '</td>';
+              plusdata += '<td>' + data[i].hit + '</td>';
+              plusdata += '</tr>';
+            }
+          },
 
-            $.ajax({
-            url:"MOCK_DATA.json",
-            type:"get",
-            // data:"",
-            dataType:"json",
-
-                success: function(data){
-                    alert("축하혀요")
-
-                    let plusdata="";    // data를 1개의 파일로 변경 (??)
-                    for (let i in data) {
-
-                        plusdata += "<tr>";
-                        plusdata += "<td>"+data[i].boardNum+"</td>";
-                        plusdata += "<td>"+data[i].title+"</td>";
-                        plusdata += "<td>"+data[i].id+"</td>";
-                        plusdata += "<td>"+data[i].date+"</td>";
-                        plusdata += "<td>"+data[i].hit+"</td>";
-                        plusdata += "</tr>";
-
-                    }
-
-
-                },
-
-                error: function(){
-                    alert("다시 하도록..")
-                }
-
-            })
-
-            
+          error: function () {
+            alert('다시 하도록..');
+          },
         });
-
-
+      });
     </script>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <table>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>날짜</th>
+        <th>조회수</th>
+      </tr>
+      <tbody id="contents">
         <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>날짜</th>
-            <th>조회수</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
-        <tbody id="contents">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-        
+      </tbody>
     </table>
-
-    
-
-</body>
+  </body>
 </html>

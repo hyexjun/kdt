@@ -1,117 +1,134 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style> /*https://www.sonohotelsresorts.com/daemyung.sn.rooms.02_01.ds/dmparse.dm*/
-        * { margin: 0; padding: 0; }
+    <style>
+      /*https://www.sonohotelsresorts.com/daemyung.sn.rooms.02_01.ds/dmparse.dm*/
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-        table, th, td { border: 1px solid #d4d7db;
-                        border-collapse: collapse; }
-        table { width: 90%;
-                border-top: 2px solid #454545;
-                margin: 0 auto; }
-        h3, h4 { text-align: center;
-                 margin: 10px auto 5px ; }
+      table,
+      th,
+      td {
+        border: 1px solid #d4d7db;
+        border-collapse: collapse;
+      }
+      table {
+        width: 90%;
+        border-top: 2px solid #454545;
+        margin: 0 auto;
+      }
+      h3,
+      h4 {
+        text-align: center;
+        margin: 10px auto 5px;
+      }
 
-        /* tr, th:nth-child(1), tr td:nth-child(1) */
+      /* tr, th:nth-child(1), tr td:nth-child(1) */
 
-        th { color: #454545;
-             font-weight: bold;
-             font-size: 14px;
-             text-align: center;
-             border-bottom: 1px solid #d4d7db;
-             border-right: 1px solid #eaebed;
-             background-color: #f5f5f5;
-             padding: 14px 0 13px 0;
-             vertical-align: middle;
-             line-height: 18px; }
-        td { color: #454545;
-             font-size: 14px;
-             text-align: center;
-             border-bottom: 1px solid #d4d7db;
-             border-right: 1px solid #eaebed;
-             padding: 14px 15px 13px;
-             vertical-align: middle;
-             line-height: 20px; }
+      th {
+        color: #454545;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        border-bottom: 1px solid #d4d7db;
+        border-right: 1px solid #eaebed;
+        background-color: #f5f5f5;
+        padding: 14px 0 13px 0;
+        vertical-align: middle;
+        line-height: 18px;
+      }
+      td {
+        color: #454545;
+        font-size: 14px;
+        text-align: center;
+        border-bottom: 1px solid #d4d7db;
+        border-right: 1px solid #eaebed;
+        padding: 14px 15px 13px;
+        vertical-align: middle;
+        line-height: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h3>입실 안내 Check-in</h3>
     <table>
-        <colgroup>
-            <col style="width: 70%;">
-            <col style="width: 30%;">
-        </colgroup>
-        <tr>
-            <th>구분</th>
-            <th>퇴실시간</th>
-        </tr>
-        <tr>
-            <td>성수기, 주말, 연휴, 오션시즌, 스키시즌</td>
-            <td>11:00</td>
-        </tr>
-        <tr>
-            <td>비수기, 주중</td>
-            <td>12:00</td>
-        </tr>
+      <colgroup>
+        <col style="width: 70%" />
+        <col style="width: 30%" />
+      </colgroup>
+      <tr>
+        <th>구분</th>
+        <th>퇴실시간</th>
+      </tr>
+      <tr>
+        <td>성수기, 주말, 연휴, 오션시즌, 스키시즌</td>
+        <td>11:00</td>
+      </tr>
+      <tr>
+        <td>비수기, 주중</td>
+        <td>12:00</td>
+      </tr>
     </table>
-    <br/><br/>
+    <br /><br />
     <h4>colspan</h4>
     <table>
-        <tr>
-            <th colspan="5">으아악</th>
-        </tr>
-        <tr>
-            <td>2행 1열</td>
-            <td>2행 2열</td>
-            <td colspan="3">2행 3열</td>
-        </tr>
-        <tr>
-            <td>3행 1열</td>
-            <td>3행 2열</td>
-            <td>3행 3열</td>
-            <td>3행 4열</td>
-            <td>3행 5열</td>
-        </tr>
+      <tr>
+        <th colspan="5">으아악</th>
+      </tr>
+      <tr>
+        <td>2행 1열</td>
+        <td>2행 2열</td>
+        <td colspan="3">2행 3열</td>
+      </tr>
+      <tr>
+        <td>3행 1열</td>
+        <td>3행 2열</td>
+        <td>3행 3열</td>
+        <td>3행 4열</td>
+        <td>3행 5열</td>
+      </tr>
     </table>
-    <br/><br/>
+    <br /><br />
     <h4>rowspan</h4>
     <table>
-        <tr>
-            <td>1행 1열</td>
-            <td>1행 2열</td>
-            <td>1행 3열</td>
-            <td>1행 4열</td>
-            <td>1행 5열</td>
-        </tr>
-        <tr>
-            <td rowspan="3">2행 1열</td>
-            <td rowspan="2">2행 2열</td>
-            <td>2행 3열</td>
-            <td>2행 4열</td>
-            <td>2행 5열</td>
-        </tr>
-        <tr>
-            <td>3행 3열</td>
-            <td>3행 4열</td>
-            <td>3행 5열</td>
-        </tr>
-        <tr>
-            <td>4행 2열</td>
-            <td>4행 3열</td>
-            <td>4행 4열</td>
-            <td>4행 5열</td>
-        </tr>
-        <tr>
-            <td>5행 1열</td>
-            <td>5행 2열</td>
-            <td>5행 3열</td>
-            <td>5행 4열</td>
-            <td>5행 5열</td>
-        </tr>
+      <tr>
+        <td>1행 1열</td>
+        <td>1행 2열</td>
+        <td>1행 3열</td>
+        <td>1행 4열</td>
+        <td>1행 5열</td>
+      </tr>
+      <tr>
+        <td rowspan="3">2행 1열</td>
+        <td rowspan="2">2행 2열</td>
+        <td>2행 3열</td>
+        <td>2행 4열</td>
+        <td>2행 5열</td>
+      </tr>
+      <tr>
+        <td>3행 3열</td>
+        <td>3행 4열</td>
+        <td>3행 5열</td>
+      </tr>
+      <tr>
+        <td>4행 2열</td>
+        <td>4행 3열</td>
+        <td>4행 4열</td>
+        <td>4행 5열</td>
+      </tr>
+      <tr>
+        <td>5행 1열</td>
+        <td>5행 2열</td>
+        <td>5행 3열</td>
+        <td>5행 4열</td>
+        <td>5행 5열</td>
+      </tr>
     </table>
-</body>
+  </body>
 </html>

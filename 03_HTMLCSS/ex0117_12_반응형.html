@@ -1,46 +1,80 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box;
-            border: 1px solid black; }
-        #wrapper { margin: 0 auto; }
-        header { width: 100%; height: 90px;
-                 background-color: steelblue; }
-        nav { width: 100%; height: 120px;
-                 background-color: ivory; }
-        section { float: left; width: 65%; height: 500px;
-                  background-color: moccasin;
-                  background-image: url(../images/023.jpg);
-                  background-size: cover; }
-        aside { float: right; width: 35%; height: 500px;
-                background-color: honeydew;}
-        footer { clear: both; /* 클리어보스 안하면 헤더 있는 곳쯤에 숨어있음 */
-                 width: 100%; height: 70px;
-                 background-color: sienna;
-                 color: snow;
-                 font-size: 30px;
-                 font-weight: 600; }
-        img { max-width: 100%; }
-        @media screen and (max-width: 100px) {
-            header { display: none; }
-            nav { display: block;
-                  width: auto; }
-            section { background-image: url(../images/013_ga.jpg) no-repeat;
-                      width: auto; }
-            aside { float: none; width: auto; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border: 1px solid black;
+      }
+      #wrapper {
+        margin: 0 auto;
+      }
+      header {
+        width: 100%;
+        height: 90px;
+        background-color: steelblue;
+      }
+      nav {
+        width: 100%;
+        height: 120px;
+        background-color: ivory;
+      }
+      section {
+        float: left;
+        width: 65%;
+        height: 500px;
+        background-color: moccasin;
+        background-image: url(../images/023.jpg);
+        background-size: cover;
+      }
+      aside {
+        float: right;
+        width: 35%;
+        height: 500px;
+        background-color: honeydew;
+      }
+      footer {
+        clear: both; /* 클리어보스 안하면 헤더 있는 곳쯤에 숨어있음 */
+        width: 100%;
+        height: 70px;
+        background-color: sienna;
+        color: snow;
+        font-size: 30px;
+        font-weight: 600;
+      }
+      img {
+        max-width: 100%;
+      }
+      @media screen and (max-width: 100px) {
+        header {
+          display: none;
         }
+        nav {
+          display: block;
+          width: auto;
+        }
+        section {
+          background-image: url(../images/013_ga.jpg) no-repeat;
+          width: auto;
+        }
+        aside {
+          float: none;
+          width: auto;
+        }
+      }
     </style>
-</head>
-<body id="wrapper">
+  </head>
+  <body id="wrapper">
     <header>헤더~~~~~~</header>
     <nav>브랜드 단지정보 커뮤니티 고객서비스</nav>
     <section></section>
     <aside>????</aside>
     <footer>해리 푸터~~~~~~~~~</footer>
-</body>
+  </body>
 </html>

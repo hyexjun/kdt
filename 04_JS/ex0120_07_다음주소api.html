@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex0120_07</title>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <style>
-        input { height: 30px; margin-bottom: 5px;}
-        #zip { width: 195px; }
-        label { width: 70px; display: inline-block; }
-        button { width: 100px; height: 30px; }
-        #addr1, #addr2 { width: 300px; }
+      input {
+        height: 30px;
+        margin-bottom: 5px;
+      }
+      #zip {
+        width: 195px;
+      }
+      label {
+        width: 70px;
+        display: inline-block;
+      }
+      button {
+        width: 100px;
+        height: 30px;
+      }
+      #addr1,
+      #addr2 {
+        width: 300px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h2>다음주소 검색</h2>
     <form action="#" method="post">
-        <label>우편번호</label>
-        <input type="text" name="zip" id="zip"/>
-        <button type="button" onclick="openZipSearch()">우편번호 검색</button>
-        <br/>
-        <label>주소</label>
-        <input type="text" name="addr1" id="addr1"/>
-        <br/>
-        <label>상세주소</label>
-        <input type="text" name="addr2" id="addr2"/>
-        <br/>
+      <label>우편번호</label>
+      <input type="text" name="zip" id="zip" />
+      <button type="button" onclick="openZipSearch()">우편번호 검색</button>
+      <br />
+      <label>주소</label>
+      <input type="text" name="addr1" id="addr1" />
+      <br />
+      <label>상세주소</label>
+      <input type="text" name="addr2" id="addr2" />
+      <br />
     </form>
     <script>
-        function openZipSearch() {
-            new daum.Postcode({
-                oncomplete: function(data) {
-
-                    alert(data.zonecode);
-                }
-            }).open();
-        }
+      function openZipSearch() {
+        new daum.Postcode({
+          oncomplete: function (data) {
+            alert(data.zonecode);
+          },
+        }).open();
+      }
     </script>
-</body>
+  </body>
 </html>

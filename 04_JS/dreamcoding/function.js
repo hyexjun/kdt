@@ -26,7 +26,7 @@ const dodo = function (add) {
 
 function showMessage(message, from) {
   if (from === undefined) {
-    from = "unknown";
+    from = 'unknown';
   }
   console.log(`${message} by ${from}`);
 }
@@ -42,13 +42,13 @@ doSomething(add);
 dodo(add);
 
 // 확인용 함수 호출
-printAll("dream", "coding", "eliie");
-showMessage("hi");
+printAll('dream', 'coding', 'eliie');
+showMessage('hi');
 
 // Callback func using function expression
 // 두 가지의 콜백 함수가 파라미터로 전달됨
 function randomQuiz(answer, printYes, printNo) {
-  if (answer === "love you") {
+  if (answer === 'love you') {
     printYes();
   } else {
     printNo();
@@ -56,14 +56,14 @@ function randomQuiz(answer, printYes, printNo) {
 }
 
 const printYes = function () {
-  console.log("yes!");
+  console.log('yes!');
 };
 const printNo = function print() {
-  console.log("no!");
+  console.log('no!');
 };
 
-randomQuiz("wrong", printYes, printNo);
-randomQuiz("love you", printYes, printNo);
+randomQuiz('wrong', printYes, printNo);
+randomQuiz('love you', printYes, printNo);
 
 // Arrow Function
 // always anonymous 항상 이름이 없는 함수
@@ -72,7 +72,7 @@ randomQuiz("love you", printYes, printNo);
 //     console.log('simplePrint!');
 // }
 
-const simplePrint = () => console.log("simplePrint!");
+const simplePrint = () => console.log('simplePrint!');
 // example
 const multi = (a, b) => {
   return a * b;
