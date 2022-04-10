@@ -18,7 +18,7 @@ const DiaryList = ({ diaryList, onRemove, onEdit }) => {
           // </div>
           // 열심히 쳤지만 결국 컴포넌트로 분리작업 들어가버리고
           <DiaryItem key={item.id} {...item} onRemove={onRemove} onEdit={onEdit}/> // 💎 요기에 넣어줍니다. 그리고.. item.js로 가자..
-          // it 객체에 포함된 모든 데이터가 ...item 쫘라락 전달
+          // id가 일치하는 객체에 포함된 모든 데이터가 ...item 쫘라락 전달
         ))}
       </div>
     </div>

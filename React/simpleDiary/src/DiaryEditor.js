@@ -5,7 +5,7 @@ const DiaryEditor = ({ onCreate }) => {
     author: '',
     content: '',
     test: '',
-    emotion: '⭐',
+    emotion: '⭐⭐⭐',
   });
 
   const authorInput = useRef();
@@ -36,7 +36,7 @@ const DiaryEditor = ({ onCreate }) => {
       author: '',
       content: '',
       test: '',
-      emotion: '⭐',
+      emotion: '⭐⭐⭐',
     });
   };
 
