@@ -1,7 +1,8 @@
 import './App.css';
 import DiaryEditor from './DiaryEditor';
 import DiaryList from './DiaryList';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
+import OptimizeTest from './OptimizeTest';
 
 // https://jsonplaceholder.typicode.com/comments
 
@@ -46,7 +47,7 @@ function App() {
 
   const onRemove = (targetId) => {
     const newDiaryList = data.filter((it) => it.id !== targetId);
-    console.log(newDiaryList);
+    // console.log(newDiaryList); 확인용 log는 웬만하면 지우자
     console.log(`${targetId}번 일기가 삭제되었습니다.`);
     setData(newDiaryList);
   };
@@ -54,14 +55,31 @@ function App() {
   const onEdit = (targetId, newContent) => {
     setData(
       data.map((item) =>
-        item.id === targetId ? { ...item, content: newContent} : item
+        item.id === targetId ? { ...item, content: newContent } : item
       )
     );
   };
 
+  const getDiaryAnalysis = useMemo(() => {
+    const goodCount = data.filter((item) => item.emotion >= 3).length;
+    const badCount = data.length - goodCount;
+    const goodRatio = (goodCount / data.length) * 100;
+    return { goodCount, badCount, goodRatio };
+  }, [data.length]);
+
+  const { goodCount, badCount, goodRatio } = getDiaryAnalysis;
+  // useMemo 쓰면 getDiaryAnalysis는 더이상 함수가 아니라는데 이 부분 다시 봐야할듯
+  // 뭔가 그 기능?을 모르겠다기보단 문법? 굴러가는 회로를 몰겠음..ㅡㅡ useRef도 마찬가지다 ㅋㅋ
+
   return (
     <div className='App'>
+      <OptimizeTest />
+      {/* 최적화테스트 실습용이니 끝나면 꼭 지워주자 */}
       <DiaryEditor onCreate={onCreate} />
+      <div>전체 일기 : {data.length}</div>
+      <div>좋은 날 : {goodCount}</div>
+      <div>안 좋은 날 : {badCount}</div>
+      <div>좋은 비율 : {goodRatio}%</div>
       <DiaryList onEdit={onEdit} onRemove={onRemove} diaryList={data} />
     </div>
   );

@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 
-const DiaryEditor = () => {
+const DiaryEditor = ( {onCreate}) => {
   const [author, setAuthor] = useState(''); // [1]
   const [content, setContent] = useState(''); // [2]
   // 둘다 문자열이고 구성도 비슷하면 state 두개로 쓸 것 없이 객체로 만들어도 된담
@@ -10,7 +10,7 @@ const DiaryEditor = () => {
     author: '',
     content: '',
     test: '',
-    emotion: 1,
+    emotion: '⭐⭐⭐',
   });
 
   const authorInput = useRef(); // useRef() : 함수 호출해서 반환값을 상수에 저장
@@ -42,7 +42,15 @@ const DiaryEditor = () => {
     // 둘 다 비어있으면 두 if문중에 어떤 것부터 실행하나 싶었는데
     // 그냥 스크립트 언어 특성 상 위에 있는 거 먼저 하나봄 ㅎㅎ
 
-    alert('저장 완료!');
+    onCreate(state.author, state.content, state.emotion);
+    alert('저장 완료!'); // 일기가 잘 저장되었다면
+    setState({
+      // 초기화해줍니다.
+      author: '',
+      content: '',
+      test: '',
+      emotion: '⭐⭐⭐',
+    });
   };
 
   return (
@@ -88,7 +96,14 @@ const DiaryEditor = () => {
         />
       </div>
       <div>
-        <textarea name='test' value={state.test} onChange={handleChangeState} />
+        <textarea
+          name='test'
+          value={state.test}
+          onChange={handleChangeState}
+          placeholder={
+            '테스트하느라고 만든 별도 공간\n입력해도 데이터가 저장되지 않습니다 :)'
+          }
+        />
       </div>
       <div>
         <select
@@ -96,11 +111,11 @@ const DiaryEditor = () => {
           value={state.emotion}
           onChange={handleChangeState}
         >
-          <option value={1}>⭐</option>
-          <option value={2}>⭐⭐</option>
-          <option value={3}>⭐⭐⭐</option>
-          <option value={4}>⭐⭐⭐⭐</option>
-          <option value={5}>⭐⭐⭐⭐⭐</option>
+          <option value={'⭐'}>⭐</option>
+          <option value={'⭐⭐'}>⭐⭐</option>
+          <option value={'⭐⭐⭐'}>⭐⭐⭐</option>
+          <option value={'⭐⭐⭐⭐'}>⭐⭐⭐⭐</option>
+          <option value={'⭐⭐⭐⭐⭐'}>⭐⭐⭐⭐⭐</option>
         </select>
       </div>
       <div>

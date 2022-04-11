@@ -5,7 +5,7 @@ const DiaryEditor = ({ onCreate }) => {
     author: '',
     content: '',
     test: '',
-    emotion: '⭐⭐⭐',
+    emotion: 3,
   });
 
   const authorInput = useRef();
@@ -36,7 +36,7 @@ const DiaryEditor = ({ onCreate }) => {
       author: '',
       content: '',
       test: '',
-      emotion: '⭐⭐⭐',
+      emotion: 3,
     });
   };
 
@@ -85,11 +85,11 @@ const DiaryEditor = ({ onCreate }) => {
           value={state.emotion}
           onChange={handleChangeState}
         >
-          <option value={'⭐'}>⭐</option>
-          <option value={'⭐⭐'}>⭐⭐</option>
-          <option value={'⭐⭐⭐'}>⭐⭐⭐</option>
-          <option value={'⭐⭐⭐⭐'}>⭐⭐⭐⭐</option>
-          <option value={'⭐⭐⭐⭐⭐'}>⭐⭐⭐⭐⭐</option>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
         </select>
       </div>
       <div>
