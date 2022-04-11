@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const DiaryEditor = ({ onCreate }) => {
   const [state, setState] = useState({
@@ -18,6 +18,10 @@ const DiaryEditor = ({ onCreate }) => {
     });
   };
 
+  useEffect(() => {
+    console.log(state)
+ }, [state])
+
   const handleSubmit = () => {
     if (state.author.length < 1) {
       authorInput.current.focus();
@@ -29,6 +33,8 @@ const DiaryEditor = ({ onCreate }) => {
       return;
     }
 
+
+    console.log(state.author, state.content, state.emotion);
     onCreate(state.author, state.content, state.emotion);
     alert('저장 완료!'); // 일기가 잘 저장되었다면
     setState({
