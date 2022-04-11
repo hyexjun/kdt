@@ -45,7 +45,8 @@ function App() {
     <div className='App'>
       <Lifecycle />
       <DiaryEditor onCreate={onCreate} />
-      {/* 게시글생성 함수를 에디터 컴포넌트에 프롭으로 전달.. ??? */}
+      {/* 게시글생성 함수를 에디터 컴포넌트에 프롭으로 전달.. ???
+      애초에 에디터 컴포넌트 안에서 함수 만들면 안되나요?..?? 해보러갔다온다.. */}
       <DiaryList onEdit={onEdit} onRemove={onRemove} diaryList={data} />
       {/* 🎁 요기로. onEdit함수가 쓰일 item의 부모인 요 컴포넌트로 갑쉬다 */}
     </div>

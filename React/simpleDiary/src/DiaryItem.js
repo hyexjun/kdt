@@ -1,26 +1,21 @@
 import { useState, useRef } from 'react';
 
-const DiaryItem = ({
-  onEdit, // 💎 js 파일을 타고 타고 여기까지 스며들어줍니다..
-  onRemove,
-  id,
-  author,
-  content,
-  emotion,
-  created_date,
-}) => {
+// 💎 js 파일을 타고 타고 여기까지 스며들어줍니다..
+
+// 다른 파일에서 만든 함수나 요소? 같은거 끌어오는 {...} 이거 잘 봐두자
+const DiaryItem = ({ onEdit, onRemove, id, author, content, emotion, created_date, }) => {
+
   const [isEdit, setIsEdit] = useState(false);
   // 수정중이냐 아니냐 boolean으로 값을 보관해놓을 state?
   // state 만들었으면 이제 토글 함수를 만들어봅니다..
+  
   const toggleIsEdit = () => setIsEdit(!isEdit); // 이 함수가 호출이 되면 isEdit을 반전시켜버리는.. 용..
 
   const [localContent, setLocalContent] = useState(content);
   // 수정창에서 열릴 contents의 기본값(useState(요거))을 찐 컨텐츠로 해두면,
-  // 수정 클릭해서 열릴 때 이전 써둔 그 데이터 고대로 나오겠쥬?
+  // 수정 클릭해서 열릴 때 이전 써둔 그 데이터 고 대로 나오겠쥬?
 
   const localContentInput = useRef();
-  // 뭐가 이렇게 많아.. 싶지만,
-  // 수정창 말고 본문창에서도ㅜㅜ 해놓은 기능이니까 완성도를 위해 참고 해줍니다..
 
   const handleRemove = () => {
     if (window.confirm(`${id}번 일기를 정말 삭제하시겠습니까?`)) {

@@ -52,7 +52,6 @@ const DiaryEditor = () => {
         <input
           ref={authorInput}
           name='author'
-          // value={author}
           value={state.author}
           onChange={(event) => {
             // ⬇ setAuthor(event.target.value);
@@ -73,7 +72,6 @@ const DiaryEditor = () => {
         <textarea
           ref={contentInput}
           name='content'
-          // value={content}
           value={state.content}
           onChange={(event) => {
             // ⬇ setContent(event.target.value);
@@ -98,7 +96,7 @@ const DiaryEditor = () => {
           value={state.emotion}
           onChange={handleChangeState}
         >
-          <option value={1}>⭐</option> {/* value={1}은 안보이는 데이터 */}
+          <option value={1}>⭐</option>
           <option value={2}>⭐⭐</option>
           <option value={3}>⭐⭐⭐</option>
           <option value={4}>⭐⭐⭐⭐</option>
