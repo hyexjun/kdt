@@ -58,6 +58,7 @@ const DiaryEditor = ({ onCreate }) => {
             setState({
               author: event.target.value,
               content: state.content,
+              emotion: state.emotion,
             });
           }}
           placeholder={'당신의 이름을 입력해주세요.'}

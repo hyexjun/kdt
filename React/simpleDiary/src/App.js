@@ -2,7 +2,7 @@ import './App.css';
 import DiaryEditor from './DiaryEditor';
 import DiaryList from './DiaryList';
 import { useState, useRef, useEffect, useMemo } from 'react';
-import OptimizeTest from './OptimizeTest';
+// import OptimizeTest from './OptimizeTest';
 
 // https://jsonplaceholder.typicode.com/comments
 
@@ -73,7 +73,7 @@ function App() {
 
   return (
     <div className='App'>
-      <OptimizeTest />
+      {/* <OptimizeTest /> */}
       {/* 최적화테스트 실습용이니 끝나면 꼭 지워주자 */}
       <DiaryEditor onCreate={onCreate} />
       <div>전체 일기 : {data.length}</div>
