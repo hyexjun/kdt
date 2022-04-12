@@ -1,12 +1,19 @@
-import React, { useEffect, useState, useRef, useContext } from 'react';
-import { DiaryDispatchContext } from './App';
+import React, { useEffect, useState, useRef } from 'react';
+// 최적화 이전 주석은 별도 파일에서 확인!
 
-const DiaryItem = ({ id, author, content, emotion, created_date }) => {
-  // useEffect(() => {
-  //   console.log(`${id}번 아이템 렌더`);
-  // });
-
-  const { onRemove, onEdit } = useContext(DiaryDispatchContext);
+const DiaryItem = ({
+  onEdit, // 상태변화 가능 + 더불어 함수 컴포넌트
+  onRemove, // 상태변화 가능 + 더불어 함수 컴포넌트
+  // onCreate 최적화 했던 것처럼 useCallback 쓰러 갑쉬다
+  id,
+  author,
+  content, // 상태변화 가능
+  emotion,
+  created_date,
+}) => {
+  useEffect(() => {
+    console.log(`${id}번 아이템 렌더`);
+  });
 
   const [isEdit, setIsEdit] = useState(false);
   const toggleIsEdit = () => setIsEdit(!isEdit);

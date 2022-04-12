@@ -1,10 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
+import { DiaryDispatchContext } from './App';
 
 // Q. 리렌더링이 발생하는 경우?
 // A. 본인 상태 변화, 부모 컴포넌트에 변화 발생, 자신이 받은 프롭이 변경된 경우 등
 
-const DiaryEditor = ({ onCreate }) => {
-  // useEffect(() => {console.log(state);}, [state]);
+// const DiaryEditor = ({ onCreate }) => {
+const DiaryEditor = () => { // <-- onCreate 컴포넌트로 안 받으니까 지워준다
+  // 근데 onCreate를 받아오긴 해야되니까요
+  const { onCreate } = useContext(DiaryDispatchContext); // 이렇게 가져옴
+
   useEffect(() => {
     console.log('DiaryEditor render');
   });
@@ -39,9 +43,8 @@ const DiaryEditor = ({ onCreate }) => {
 
     console.log(state.author, state.content, state.emotion);
     onCreate(state.author, state.content, state.emotion);
-    alert('저장 완료!'); // 일기가 잘 저장되었다면
+    alert('저장 완료!');
     setState({
-      // 초기화해줍니다.
       author: '',
       content: '',
       test: '',
