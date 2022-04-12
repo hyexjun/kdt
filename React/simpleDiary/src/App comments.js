@@ -1,7 +1,7 @@
 import './App.css';
 import DiaryEditor from './DiaryEditor';
 import DiaryList from './DiaryList';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Lifecycle from './Lifecycle';
 
 function App() {

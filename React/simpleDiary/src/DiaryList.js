@@ -1,6 +1,6 @@
 import DiaryItem from './DiaryItem';
 
-// 신병 받아라.. onRemove 이후에도 onEdit 만들었으니 props로 받아야겠지요? 💎
+// onRemove 이후에도 onEdit 만들었으니 props로 받아야겠지요? 💎
 const DiaryList = ({ diaryList, onRemove, onEdit }) => {
   return (
     <div className='DiaryList'>
@@ -8,11 +8,6 @@ const DiaryList = ({ diaryList, onRemove, onEdit }) => {
       <h4>{diaryList.length}개의 일기가 있습니다.</h4>
       <div>
         {diaryList.map((item) => (
-          //   <div>작성자 : {item.author}</div>
-          //   <div>내용 : {item.content}</div>
-          //   <div>감정 : {item.emotion}</div>
-          //   <div>작성 시각 : {item.created_date}</div>
-          // 열심히 쳤지만 결국 컴포넌트로 분리작업 들어가버리고
           <DiaryItem
             key={item.id}
             {...item}
