@@ -2,6 +2,10 @@
   font-family: 'Gowun Dodum', sans-serif;
 }
 
+.Ratio {
+  text-align: center;
+}
+
 /* Editor */
 .DiaryEditor {
   border: 1px solid gray;
