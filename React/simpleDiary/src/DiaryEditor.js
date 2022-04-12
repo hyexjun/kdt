@@ -1,6 +1,17 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+
+// Q. 리렌더링이 발생하는 경우?
+// A. 본인 상태 변화, 부모 컴포넌트에 변화 발생, 자신이 받은 프롭이 변경된 경우 등
 
 const DiaryEditor = ({ onCreate }) => {
+  // useEffect(() => {console.log(state);}, [state]);
+  useEffect(() => {
+    console.log('DiaryEditor render');
+  });
+
+  const authorInput = useRef();
+  const contentInput = useRef();
+
   const [state, setState] = useState({
     author: '',
     content: '',
@@ -8,19 +19,12 @@ const DiaryEditor = ({ onCreate }) => {
     emotion: 3,
   });
 
-  const authorInput = useRef();
-  const contentInput = useRef();
-
   const handleChangeState = (event) => {
     setState({
       ...state,
       [event.target.name]: event.target.value,
     });
   };
-
-  useEffect(() => {
-    console.log(state)
- }, [state])
 
   const handleSubmit = () => {
     if (state.author.length < 1) {
@@ -32,7 +36,6 @@ const DiaryEditor = ({ onCreate }) => {
       contentInput.current.focus();
       return;
     }
-
 
     console.log(state.author, state.content, state.emotion);
     onCreate(state.author, state.content, state.emotion);
@@ -83,7 +86,9 @@ const DiaryEditor = ({ onCreate }) => {
           name='test'
           value={state.test}
           onChange={handleChangeState}
-          placeholder={'테스트하느라고 만든 별도 공간\n입력해도 데이터가 저장되지 않습니다 :)'}
+          placeholder={
+            '테스트하느라고 만든 별도 공간\n입력해도 데이터가 저장되지 않습니다 :)'
+          }
         />
       </div>
       <div>
@@ -105,4 +110,4 @@ const DiaryEditor = ({ onCreate }) => {
     </div>
   );
 };
-export default DiaryEditor;
+export default React.memo(DiaryEditor);
