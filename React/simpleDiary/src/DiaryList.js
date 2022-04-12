@@ -1,7 +1,15 @@
+import { useContext } from 'react';
 import DiaryItem from './DiaryItem';
+import { DiaryStateContext } from './App'; // 컴포넌트 트리로 데이터 가져올 곳
 
-// onRemove 이후에도 onEdit 만들었으니 props로 받아야겠지요? 💎
-const DiaryList = ({ diaryList, onRemove, onEdit }) => {
+// const DiaryList = ({ diaryList, onRemove, onEdit }) => {
+  // 이제 더이상 diaryList를 프롭으로 받아올 필요 X
+
+const DiaryList = ({ onRemove, onEdit }) => {
+  // onRemove, onEdit 프롭 받아왔으니 💎
+
+  const diaryList = useContext(DiaryStateContext)
+
   return (
     <div className='DiaryList'>
       <h2>누가 내 🧀 먹었냐고</h2>
@@ -11,10 +19,9 @@ const DiaryList = ({ diaryList, onRemove, onEdit }) => {
           <DiaryItem
             key={item.id}
             {...item}
-            onRemove={onRemove}
-            onEdit={onEdit}
-          /> // 💎 요기에 넣어줍니다. 그리고.. item.js로 가자..
-          // id가 일치하는 객체에 포함된 모든 데이터가 ...item 쫘라락 전달
+            onRemove={onRemove} // 💎 써준다
+            onEdit={onEdit} // 💎 받아온 프롭 써주기
+          />
         ))}
       </div>
     </div>

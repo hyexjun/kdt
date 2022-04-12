@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-
 // 💎 js 파일을 타고 타고 여기까지 스며들어줍니다..
 
-// 다른 파일에서 만든 함수나 요소? 같은거 끌어오는 {...} 이거 잘 봐두자
 const DiaryItem = ({
   onEdit,
   onRemove,
