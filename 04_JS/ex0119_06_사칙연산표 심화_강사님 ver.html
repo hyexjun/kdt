@@ -7,10 +7,12 @@
     <title>Document</title>
     <style>
       table,
-      th,
+      tr,
       td {
         border: 1px solid black;
         border-collapse: collapse;
+        width: 500px;
+        text-align: center;
       }
     </style>
   </head>
@@ -22,32 +24,35 @@
       <label>2차</label>
       <input type="text" name="num1" id="num3" />
       <input type="text" name="num2" id="num4" /><br />
+      <br>
       <button type="button" onclick="f_cal()">4칙연산</button>
+      <br>
+      <br>
     </form>
     <table>
       <thead>
         <tr>
-          <th>구분</th>
-          <th>더하기</th>
-          <th>빼기</th>
-          <th>곱하기</th>
-          <th>나누기</th>
+          <td>구분</td>
+          <td>더하기</td>
+          <td>빼기</td>
+          <td>곱하기</td>
+          <td>나누기</td>
         </tr>
       </thead>
       <tbody id="tbody1">
         <tr>
           <td>결과값1</td>
-          <td id="1">값이 나옴.</td>
-          <td id="2">값이 나옴.</td>
-          <td id="3">값이 나옴.</td>
-          <td id="4">값이 나옴.</td>
+          <td id="1"></td>
+          <td id="2"></td>
+          <td id="3"></td>
+          <td id="4"></td>
         </tr>
         <tr>
           <td>결과값2</td>
-          <td id="5">값이 나옴.</td>
-          <td id="6">값이 나옴.</td>
-          <td id="7">값이 나옴.</td>
-          <td id="8">값이 나옴.</td>
+          <td id="5"></td>
+          <td id="6"></td>
+          <td id="7"></td>
+          <td id="8"></td>
         </tr>
       </tbody>
     </table>
@@ -55,10 +60,10 @@
     <script>
       function f_cal() {
         // 호출해서 데이터값을 num1, num2에 넣을것
-        var result1 = [];
-        var num = [];
+        let result1 = [];
+        let num = [];
         //2수를 가져옴.
-        for (var i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++) {
           num[i] = Number(document.getElementById('num' + (i + 1)).value);
           console.log(num[i]);
         }
@@ -68,13 +73,13 @@
         //    num[3] = Number(document.getElementById("num4").value);
         result1 = cal(num);
 
-        for (var i = 0; i < 8; i++) {
-          // var tag = <tr>
+        for (let i = 0; i < 8; i++) {
+          // let tag = <tr>
           //     <td>결과값1</td>
-          //     <td id="1">값이 나옴.</td>
-          //     <td id="2">값이 나옴.</td>
-          //     <td id="3">값이 나옴.</td>
-          //     <td id="4">값이 나옴.</td>
+          //     <td id="1"></td>
+          //     <td id="2"></td>
+          //     <td id="3"></td>
+          //     <td id="4"></td>
           // </tr>
           document.getElementById(i + 1).innerText = result1[i];
         }
@@ -89,8 +94,8 @@
 
       function cal(num) {
         // 4칙연산을 해서 4개의 값을 리턴 방법 무엇일까요??
-        var result1 = [];
-        for (var i = 0; i < 8; i++) {
+        let result1 = [];
+        for (let i = 0; i < 8; i++) {
           if (i % 4 == 0)
             result1[i] =
               num[2 * Math.floor(i / 4)] + num[2 * Math.floor(i / 4) + 1];

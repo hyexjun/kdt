@@ -25,7 +25,7 @@
     <br />
     <table>
       <tr>
-        <td colspan="2">랜덤 숫자를 맞혀보세요.</td>
+        <td colspan="2">1~10 사이의 숫자를 맞혀보세요.</td>
       </tr>
       <tr>
         <td>입력한 숫자</td>
@@ -53,12 +53,14 @@
 
       function whatNum() {
         var inputNum = document.getElementById('num').value;
-        var new_arr = [];
+        // var new_arr = [];
 
         // for (var i=0 ; i<5 ; i++) {
 
-        new_arr[i] = inputNum;
-        var inputNum = document.getElementById('num').value;
+        // new_arr[i] = inputNum;
+        // var inputNum = document.getElementById('num').value;
+        document.getElementById('answer').innerText =
+          document.getElementById('num').value;
         if (inputNum > rNum) {
           document.getElementById('ranNum').innerText = 'Down';
         } else if (inputNum < rNum) {
@@ -69,7 +71,7 @@
 
         console.log('랜덤번호 : ', rNum);
         console.log('입력번호 : ', inputNum);
-        console.log(new_arr);
+        // console.log(new_arr);
       }
     </script>
   </body>

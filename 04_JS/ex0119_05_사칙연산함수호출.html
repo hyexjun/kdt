@@ -46,11 +46,11 @@
     </table>
     <script>
       function cal(num1, num2) {
-        // var num1 = Number(document.getElementById("num1").value);
-        // var num2 = Number(document.getElementById("num2").value);
+        // let num1 = Number(document.getElementById("num1").value);
+        // let num2 = Number(document.getElementById("num2").value);
         // ㄴ이거 이 함수 내에서는 불필요한 이유 : 함수명 옆 파라미터로 이미 명명해주었기 땜시
 
-        var result1 = [];
+        let result1 = [];
         result1[0] = num1 + num2;
         result1[1] = num1 - num2;
         result1[2] = num1 * num2;
@@ -59,11 +59,11 @@
       }
 
       function cal_table() {
-        var result1 = []; // Q2. 위 함수의 result1=[]; 선언과 다른 객체?인건 알겠음
-        var num1 = Number(document.getElementById('num1').value);
-        var num2 = Number(document.getElementById('num2').value);
-        var result1 = cal(num1, num2); // 근데 이 줄에서 var 선언이 있고 없고의 차이?
-        // 해보니까 var 있든 없든 정상작동은 됨..
+        let result1 = []; // Q2. 위 함수의 result1=[]; 선언과 다른 객체?인건 알겠음
+        let num1 = Number(document.getElementById('num1').value);
+        let num2 = Number(document.getElementById('num2').value);
+        result1 = cal(num1, num2); // 근데 이 줄에서 let 선언이 있고 없고의 차이?
+        // 해보니까 let 있든 없든 정상작동은 됨..
 
         document.getElementById('plus').innerText = result1[0];
         document.getElementById('minus').innerText = result1[1];

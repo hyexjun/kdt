@@ -9,6 +9,9 @@
       table,
       tr,
       td {
+        text-align: center;
+        border-collapse: collapse;
+        width: 400px;
         border: 1px solid black;
       }
     </style>
@@ -63,10 +66,10 @@
 
     <script>
       function f_cal() {
-        for (var i = 1; i <= 3; i++) {
-          var result1 = [];
-          var num1 = parseInt(document.getElementById('num' + i + '1').value);
-          var num2 = parseInt(document.getElementById('num' + i + '2').value);
+        for (let i = 1; i <= 3; i++) {
+          let result1 = [];
+          let num1 = parseInt(document.getElementById('num' + i + '1').value);
+          let num2 = parseInt(document.getElementById('num' + i + '2').value);
 
           result1 = cal(num1, num2);
 
@@ -77,7 +80,7 @@
         }
 
         function cal(num1, num2) {
-          var result = [, , ,];
+          let result = [, , ,];
           result[0] = num1 + num2;
           result[1] = num1 - num2;
           result[2] = num1 * num2;
