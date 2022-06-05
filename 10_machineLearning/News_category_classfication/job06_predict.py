@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split  #scikit-learn
+from sklearn.model_selection import train_test_split  # scikit-learn
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from sklearn.preprocessing import LabelEncoder
@@ -46,5 +46,3 @@ for i in range(len(tokened_X)):
     if len(tokened_X[i]) > 29:
         tokened_X[i] = tokened_X[i][:29]
 X_pad = pad_sequences(tokened_X, 29)
-
-
