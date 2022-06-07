@@ -9,10 +9,12 @@ def blist(req):
     qs = Board.objects.all().order_by('-b_group', 'b_step')
     return render(req, 'blist.html')
 
+
 def bwrite(req):
     return render(req, 'bwrite.html')
 
-def bwriteOk(req):  
+
+def bwriteOk(req):
     id = req.POST.get('id')
     member = Member.objects.get(u_name=id)
     # member = Member.objects.get(u_id=req.POST.get('id'))  # 15, 16번줄 합쳤음
@@ -29,8 +31,8 @@ def bwriteOk(req):
     max_no += 1
     b_no = max_no
 
-    qs = Board(b_no=b_no, member=member, b_title=title, b_content=content, b_group=b_no, b_img=img)
+    qs = Board(b_no=b_no, member=member, b_title=title,
+               b_content=content, b_group=b_no, b_img=img)
     qs.save()
 
     return redirect('board:blist')
-

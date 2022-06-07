@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main</title>
-</head>
-<body>
+  </head>
+  <body>
     <h2>메인페이지</h2>
-    {% if request.session.s_id %}    <!--views에서 함수명 req든 뭐든 여긴 무조건 request여야된다.-->
-        <h3>{{request.session.s_name}}님, 환영합니다.</h3>
-        <ul>
-            <li><a href="{% url 'board:blist' %}">자유게시판</a></li>
-            <li><a href="/admin">관리자페이지</a></li>
-            <li><a href="{% url 'member:logout' %}">로그아웃</a></li>
-        </ul>
+    {% if request.session.s_id %}
+    <!--views에서 함수명 req든 뭐든 여긴 무조건 request여야된다.-->
+    <h3>{{request.session.s_name}}님, 환영합니다.</h3>
+    <ul>
+      <li><a href="{% url 'board:blist' %}">자유게시판</a></li>
+      <li><a href="/admin">관리자페이지</a></li>
+      <li><a href="{% url 'member:logout' %}">로그아웃</a></li>
+    </ul>
     {% else %}
-        <ul>
-            <li>회원가입</li>
-            <li><a href="{% url 'member:login' %}">로그인</a></li>   <!--멤버에서 로그인 url, view, html 만들고 href 걸어주기-->
-        </ul>
+    <ul>
+      <li>회원가입</li>
+      <li><a href="{% url 'member:login' %}">로그인</a></li>
+      <!--멤버에서 로그인 url, view, html 만들고 href 걸어주기-->
+    </ul>
     {% endif %}
-</body>
+  </body>
 </html>

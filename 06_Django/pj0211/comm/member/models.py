@@ -3,6 +3,8 @@ from django.db import models
 from django.forms import DateTimeField
 
 # Create your models here.
+
+
 class Member(models.Model):
     u_id = models.CharField(max_length=100, primary_key=True)
     u_pw = models.CharField(max_length=100)

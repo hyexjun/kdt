@@ -3,6 +3,8 @@ from django.db import models
 from member.models import Member
 
 # Create your models here.
+
+
 class Board(models.Model):
     b_no = models.IntegerField(default=0, primary_key=True)
     member = models.ForeignKey(Member, on_delete=models.DO_NOTHING, null=True)
@@ -13,7 +15,7 @@ class Board(models.Model):
     b_group = models.IntegerField(default=0)
     b_step = models.IntegerField(default=0)
     b_indent = models.IntegerField(default=0)
-    
+
     b_hit = models.IntegerField(default=0)
     b_img = models.ImageField(blank=True)
 
