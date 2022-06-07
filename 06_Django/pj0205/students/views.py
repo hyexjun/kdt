@@ -22,11 +22,11 @@ def regStuCon(request):
     qs.save()
 
     return HttpResponseRedirect(reverse('index'))
-    
+
 
 def regStuAll(request):
     qs = Student.objects.all()
-    context = {'stuList':qs}
+    context = {'stuList': qs}
 
     return render(request, 'stuList.html', context)
 
@@ -42,5 +42,5 @@ def regStuSearCon(request):
     qs = Student.objects.filter(s_name__contains=keyword)
     # qs = Student.objects.filter(RadioButton__contains=keyword)
     # 라디오에서 선택한 속성값으로 필터되는 거 만들고 싶다..
-    context = {'searchList':qs}
+    context = {'searchList': qs}
     return render(request, 'search.html', context)
